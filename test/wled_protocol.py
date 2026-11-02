@@ -15,6 +15,8 @@ class WledState:
     red: int | None = None
     green: int | None = None
     blue: int | None = None
+    white: int | None = None
+    cct: int | None = None
     nightlight: bool | None = None
     palette: int | None = None
     effect: int | None = None
@@ -59,7 +61,7 @@ def parse_state(frame: str) -> WledState | None:
     segment = segments[0] if segments else {}
     if not isinstance(segment, dict):
         return None
-    for key in ("pal", "fx", "sx", "ix"):
+    for key in ("pal", "fx", "sx", "ix", "cct"):
         if key in segment and (not isinstance(segment[key], int) or not 0 <= segment[key] <= 255):
             return None
 
@@ -78,6 +80,8 @@ def parse_state(frame: str) -> WledState | None:
         red=rgb[0] if len(rgb) >= 3 else None,
         green=rgb[1] if len(rgb) >= 3 else None,
         blue=rgb[2] if len(rgb) >= 3 else None,
+        white=rgb[3] if len(rgb) == 4 else None,
+        cct=segment.get("cct"),
         nightlight=nightlight.get("on") if nightlight else None,
         palette=segment.get("pal"),
         effect=segment.get("fx"),

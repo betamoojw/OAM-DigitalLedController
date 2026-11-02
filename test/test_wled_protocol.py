@@ -7,10 +7,11 @@ class WledProtocolTests(unittest.TestCase):
     def test_state_reply_updates_rgb_effects_and_nightlight(self):
         state = parse_state(
             '{"state":{"on":true,"bri":180,"ps":12,"nl":{"on":true,"dur":3,"mode":1,"tbri":0},'
-            '"seg":[{"col":[[10,20,30]],"pal":4,"fx":7,"sx":100,"ix":90}]}}'
+            '"seg":[{"col":[[10,20,30,40]],"cct":127,"pal":4,"fx":7,"sx":100,"ix":90}]}}'
         )
         self.assertIsNotNone(state)
         self.assertEqual((state.red, state.green, state.blue), (10, 20, 30))
+        self.assertEqual((state.white, state.cct), (40, 127))
         self.assertEqual((state.palette, state.effect, state.effect_speed, state.effect_intensity), (4, 7, 100, 90))
         self.assertTrue(state.nightlight)
 
@@ -21,6 +22,7 @@ class WledProtocolTests(unittest.TestCase):
         self.assertIsNone(parse_state('{"state":{"bri":300}}'))
         self.assertIsNone(parse_state('{"state":{"nl":{"mode":4}}}'))
         self.assertIsNone(parse_state('{"state":{"seg":[{"col":[[1,2]]}]}}'))
+        self.assertIsNone(parse_state('{"state":{"seg":[{"cct":256}]}}'))
 
     def test_preset_and_scene_mapping(self):
         state = parse_state('{"state":{"ps":64}}')

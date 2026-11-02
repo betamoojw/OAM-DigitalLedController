@@ -34,6 +34,32 @@
               <ComObjectRef Id="%AID%_O-%TT%%CC%025_R-%TT%%CC%02501" RefId="%AID%_O-%TT%%CC%025" Text="Effect Speed Status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%026_R-%TT%%CC%02601" RefId="%AID%_O-%TT%%CC%026" Text="Effect Intensity" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%027_R-%TT%%CC%02701" RefId="%AID%_O-%TT%%CC%027" Text="Effect Intensity Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%028_R-%TT%%CC%02801" RefId="%AID%_O-%TT%%CC%028" Text="Weiss" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%029_R-%TT%%CC%02901" RefId="%AID%_O-%TT%%CC%029" Text="Weiss Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%030_R-%TT%%CC%03001" RefId="%AID%_O-%TT%%CC%030" Text="Farbtemperatur" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%031_R-%TT%%CC%03101" RefId="%AID%_O-%TT%%CC%031" Text="Farbtemperatur Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%032_R-%TT%%CC%03201" RefId="%AID%_O-%TT%%CC%032" Text="Warmweiss" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%033_R-%TT%%CC%03301" RefId="%AID%_O-%TT%%CC%033" Text="Warmweiss Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%034_R-%TT%%CC%03401" RefId="%AID%_O-%TT%%CC%034" Text="Kaltweiss" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%035_R-%TT%%CC%03501" RefId="%AID%_O-%TT%%CC%035" Text="Kaltweiss Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%036_R-%TT%%CC%03601" RefId="%AID%_O-%TT%%CC%036" Text="Farbton" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%037_R-%TT%%CC%03701" RefId="%AID%_O-%TT%%CC%037" Text="Farbton Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%038_R-%TT%%CC%03801" RefId="%AID%_O-%TT%%CC%038" Text="Saettigung" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%039_R-%TT%%CC%03901" RefId="%AID%_O-%TT%%CC%039" Text="Saettigung Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%040_R-%TT%%CC%04001" RefId="%AID%_O-%TT%%CC%040" Text="HSV Helligkeit" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%041_R-%TT%%CC%04101" RefId="%AID%_O-%TT%%CC%041" Text="HSV Helligkeit Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%042_R-%TT%%CC%04201" RefId="%AID%_O-%TT%%CC%042" Text="RGBW" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%043_R-%TT%%CC%04301" RefId="%AID%_O-%TT%%CC%043" Text="RGBW Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%044_R-%TT%%CC%04401" RefId="%AID%_O-%TT%%CC%044" Text="Rot relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%045_R-%TT%%CC%04501" RefId="%AID%_O-%TT%%CC%045" Text="Gruen relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%046_R-%TT%%CC%04601" RefId="%AID%_O-%TT%%CC%046" Text="Blau relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%047_R-%TT%%CC%04701" RefId="%AID%_O-%TT%%CC%047" Text="Weiss relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%048_R-%TT%%CC%04801" RefId="%AID%_O-%TT%%CC%048" Text="Warmweiss relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%049_R-%TT%%CC%04901" RefId="%AID%_O-%TT%%CC%049" Text="Kaltweiss relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%050_R-%TT%%CC%05001" RefId="%AID%_O-%TT%%CC%050" Text="Farbton relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%051_R-%TT%%CC%05101" RefId="%AID%_O-%TT%%CC%051" Text="Saettigung relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%052_R-%TT%%CC%05201" RefId="%AID%_O-%TT%%CC%052" Text="HSV Helligkeit relativ" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%053_R-%TT%%CC%05301" RefId="%AID%_O-%TT%%CC%053" Text="Effect relativ" />
             </ComObjectRefs>
           </Static>
           <Dynamic>
@@ -53,6 +79,10 @@
                 <ParameterRefRef RefId="%AID%_UP-%TT%00007_R-%TT%0000701" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00008_R-%TT%0000801" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00009_R-%TT%0000901" IndentLevel="1" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Farbtemperatur" UIHint="Headline" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="KNX-Farbtemperaturen in Kelvin werden auf den internen WLED-Bereich von 0 bis 255 abgebildet." />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00010_R-%TT%0001001" IndentLevel="1" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00011_R-%TT%0001101" IndentLevel="1" />
                 <ComObjectRefRef RefId="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" />
               </ParameterBlock>
             </ChannelIndependentBlock>
@@ -62,4 +92,3 @@
     </Manufacturer>
   </ManufacturerData>
 </KNX>
-

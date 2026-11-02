@@ -5,7 +5,7 @@
   <ManufacturerData>
     <Manufacturer RefId="M-00FA">
       <ApplicationPrograms>
-        <ApplicationProgram Id="%AID%" ApplicationNumber="200" ApplicationVersion="1" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="DigitalLED" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="false" MinEtsVersion="4.0">
+        <ApplicationProgram Id="%AID%" ApplicationNumber="200" ApplicationVersion="2" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="DigitalLED" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="false" MinEtsVersion="4.0">
           <Static>
             <ParameterTypes>
               <ParameterType Id="%AID%_PT-RequestInterval" Name="RequestInterval">
@@ -30,13 +30,16 @@
               <ParameterType Id="%AID%_PT-NightlightDuration" Name="NightlightDuration">
                 <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="1" maxInclusive="255" />
               </ParameterType>
+              <ParameterType Id="%AID%_PT-CctKelvin" Name="CctKelvin">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="2000" maxInclusive="10000" />
+              </ParameterType>
             </ParameterTypes>
             <Parameters>
               <Union SizeInBit="8">
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
                 <Parameter Id="%AID%_UP-%TT%00001" Name="RequestXInterval" ParameterType="%AID%_PT-RequestInterval" Offset="0" BitOffset="0" Text="WLED Statusabfrage" Value="5" />
               </Union>
-              <Union SizeInBit="72">
+              <Union SizeInBit="96">
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="1" BitOffset="0" />
                 <Parameter Id="%AID%_UP-%TT%00002" Name="NightlightDuration" ParameterType="%AID%_PT-NightlightDuration" Offset="0" BitOffset="0" Text="Nachtlichtdauer (Minuten)" Value="3" />
                 <Parameter Id="%AID%_UP-%TT%00003" Name="NightlightMode" ParameterType="%AID%_PT-NightlightMode" Offset="1" BitOffset="0" Text="Nachtlichtmodus" Value="1" />
@@ -46,6 +49,8 @@
                 <Parameter Id="%AID%_UP-%TT%00007" Name="DefaultEffect" ParameterType="%AID%_PT-Byte255" Offset="5" BitOffset="0" Text="Standardeffekt" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00008" Name="DefaultEffectSpeed" ParameterType="%AID%_PT-Byte255" Offset="6" BitOffset="0" Text="Effektgeschwindigkeit" Value="128" />
                 <Parameter Id="%AID%_UP-%TT%00009" Name="DefaultEffectIntensity" ParameterType="%AID%_PT-Byte255" Offset="7" BitOffset="0" Text="Effektintensität" Value="128" />
+                <Parameter Id="%AID%_UP-%TT%00010" Name="CctKelvinMin" ParameterType="%AID%_PT-CctKelvin" Offset="8" BitOffset="0" Text="Minimale Farbtemperatur" Value="2700" />
+                <Parameter Id="%AID%_UP-%TT%00011" Name="CctKelvinMax" ParameterType="%AID%_PT-CctKelvin" Offset="10" BitOffset="0" Text="Maximale Farbtemperatur" Value="6500" />
               </Union>
             </Parameters>
             <ParameterRefs>
@@ -58,6 +63,8 @@
               <ParameterRef Id="%AID%_UP-%TT%00007_R-%TT%0000701" RefId="%AID%_UP-%TT%00007" />
               <ParameterRef Id="%AID%_UP-%TT%00008_R-%TT%0000801" RefId="%AID%_UP-%TT%00008" />
               <ParameterRef Id="%AID%_UP-%TT%00009_R-%TT%0000901" RefId="%AID%_UP-%TT%00009" />
+              <ParameterRef Id="%AID%_UP-%TT%00010_R-%TT%0001001" RefId="%AID%_UP-%TT%00010" />
+              <ParameterRef Id="%AID%_UP-%TT%00011_R-%TT%0001101" RefId="%AID%_UP-%TT%00011" />
             </ParameterRefs>
             <ComObjectTable>
               <ComObject Id="%AID%_O-%TT%%CC%001" Name="Ch%C%DimSw" Number="201" ObjectSize="1 Bit" Text="Schalten" FunctionText="Digital LED %Z%: Schalten" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
@@ -87,6 +94,32 @@
               <ComObject Id="%AID%_O-%TT%%CC%025" Name="Ch%C%EffectSpeedValue" Number="225" ObjectSize="1 Byte" Text="Effect Speed Status" FunctionText="Digital LED %Z%: Effect Speed" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
               <ComObject Id="%AID%_O-%TT%%CC%026" Name="Ch%C%EffectIntensity" Number="226" ObjectSize="1 Byte" Text="Effect Intensity" FunctionText="Digital LED %Z%: Effect Intensity" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
               <ComObject Id="%AID%_O-%TT%%CC%027" Name="Ch%C%EffectIntensityValue" Number="227" ObjectSize="1 Byte" Text="Effect Intensity Status" FunctionText="Digital LED %Z%: Effect Intensity" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
+              <ComObject Id="%AID%_O-%TT%%CC%028" Name="Ch%C%White" Number="228" ObjectSize="1 Byte" Text="Weiss" FunctionText="Digital LED %Z%: Weiss" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-010" />
+              <ComObject Id="%AID%_O-%TT%%CC%029" Name="Ch%C%WhiteValue" Number="229" ObjectSize="1 Byte" Text="Weiss Status" FunctionText="Digital LED %Z%: Weiss" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-010" />
+              <ComObject Id="%AID%_O-%TT%%CC%030" Name="Ch%C%Cct" Number="230" ObjectSize="2 Bytes" Text="Farbtemperatur" FunctionText="Digital LED %Z%: Farbtemperatur" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-7-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%031" Name="Ch%C%CctValue" Number="231" ObjectSize="2 Bytes" Text="Farbtemperatur Status" FunctionText="Digital LED %Z%: Farbtemperatur" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-7-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%032" Name="Ch%C%WarmWhite" Number="232" ObjectSize="1 Byte" Text="Warmweiss" FunctionText="Digital LED %Z%: Warmweiss" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-010" />
+              <ComObject Id="%AID%_O-%TT%%CC%033" Name="Ch%C%WarmWhiteValue" Number="233" ObjectSize="1 Byte" Text="Warmweiss Status" FunctionText="Digital LED %Z%: Warmweiss" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-010" />
+              <ComObject Id="%AID%_O-%TT%%CC%034" Name="Ch%C%ColdWhite" Number="234" ObjectSize="1 Byte" Text="Kaltweiss" FunctionText="Digital LED %Z%: Kaltweiss" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-010" />
+              <ComObject Id="%AID%_O-%TT%%CC%035" Name="Ch%C%ColdWhiteValue" Number="235" ObjectSize="1 Byte" Text="Kaltweiss Status" FunctionText="Digital LED %Z%: Kaltweiss" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-010" />
+              <ComObject Id="%AID%_O-%TT%%CC%036" Name="Ch%C%Hue" Number="236" ObjectSize="1 Byte" Text="Farbton" FunctionText="Digital LED %Z%: Farbton" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-003" />
+              <ComObject Id="%AID%_O-%TT%%CC%037" Name="Ch%C%HueValue" Number="237" ObjectSize="1 Byte" Text="Farbton Status" FunctionText="Digital LED %Z%: Farbton" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-003" />
+              <ComObject Id="%AID%_O-%TT%%CC%038" Name="Ch%C%Saturation" Number="238" ObjectSize="1 Byte" Text="Saettigung" FunctionText="Digital LED %Z%: Saettigung" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
+              <ComObject Id="%AID%_O-%TT%%CC%039" Name="Ch%C%SaturationValue" Number="239" ObjectSize="1 Byte" Text="Saettigung Status" FunctionText="Digital LED %Z%: Saettigung" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
+              <ComObject Id="%AID%_O-%TT%%CC%040" Name="Ch%C%Value" Number="240" ObjectSize="1 Byte" Text="HSV Helligkeit" FunctionText="Digital LED %Z%: HSV Helligkeit" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
+              <ComObject Id="%AID%_O-%TT%%CC%041" Name="Ch%C%ValueValue" Number="241" ObjectSize="1 Byte" Text="HSV Helligkeit Status" FunctionText="Digital LED %Z%: HSV Helligkeit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-001" />
+              <ComObject Id="%AID%_O-%TT%%CC%042" Name="Ch%C%RGBW" Number="242" ObjectSize="6 Bytes" Text="RGBW" FunctionText="Digital LED %Z%: RGBW" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-251-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%043" Name="Ch%C%RGBWValue" Number="243" ObjectSize="6 Bytes" Text="RGBW Status" FunctionText="Digital LED %Z%: RGBW" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-251-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%044" Name="Ch%C%RedRel" Number="244" ObjectSize="4 Bit" Text="Rot relativ" FunctionText="Digital LED %Z%: Rot relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%045" Name="Ch%C%GreenRel" Number="245" ObjectSize="4 Bit" Text="Gruen relativ" FunctionText="Digital LED %Z%: Gruen relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%046" Name="Ch%C%BlueRel" Number="246" ObjectSize="4 Bit" Text="Blau relativ" FunctionText="Digital LED %Z%: Blau relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%047" Name="Ch%C%WhiteRel" Number="247" ObjectSize="4 Bit" Text="Weiss relativ" FunctionText="Digital LED %Z%: Weiss relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%048" Name="Ch%C%WarmWhiteRel" Number="248" ObjectSize="4 Bit" Text="Warmweiss relativ" FunctionText="Digital LED %Z%: Warmweiss relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%049" Name="Ch%C%ColdWhiteRel" Number="249" ObjectSize="4 Bit" Text="Kaltweiss relativ" FunctionText="Digital LED %Z%: Kaltweiss relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%050" Name="Ch%C%HueRel" Number="250" ObjectSize="4 Bit" Text="Farbton relativ" FunctionText="Digital LED %Z%: Farbton relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%051" Name="Ch%C%SaturationRel" Number="251" ObjectSize="4 Bit" Text="Saettigung relativ" FunctionText="Digital LED %Z%: Saettigung relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%052" Name="Ch%C%ValueRel" Number="252" ObjectSize="4 Bit" Text="HSV Helligkeit relativ" FunctionText="Digital LED %Z%: HSV Helligkeit relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
+              <ComObject Id="%AID%_O-%TT%%CC%053" Name="Ch%C%EffectRel" Number="253" ObjectSize="4 Bit" Text="Effect relativ" FunctionText="Digital LED %Z%: Effect relativ" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-3-7" />
             </ComObjectTable>
             <ComObjectRefs>
               <op:include href="DigitalLedModule.templ.xml" xpath="//ComObjectRefs/*" type="template" prefix="APP" IsInner="true" />
@@ -100,4 +133,3 @@
     </Manufacturer>
   </ManufacturerData>
 </KNX>
-

@@ -26,6 +26,8 @@ class DigitalLedModule : public OpenKNX::Module
         uint8_t red = 0;
         uint8_t green = 0;
         uint8_t blue = 0;
+        uint8_t white = 0;
+        uint8_t cct = 127;
         bool nightlight = false;
         uint8_t palette = 0;
         uint8_t effect = 0;
@@ -50,6 +52,11 @@ class DigitalLedModule : public OpenKNX::Module
     void sendSwitch(bool on);
     void sendBrightness(uint8_t brightness);
     void sendColor(uint8_t red, uint8_t green, uint8_t blue);
+    void sendRgbw(uint8_t red, uint8_t green, uint8_t blue, uint8_t white);
+    void sendColorTemperature(uint16_t kelvin);
+    void sendWarmWhite(uint8_t value);
+    void sendColdWhite(uint8_t value);
+    void sendHsv(uint16_t hue, uint8_t saturation, uint8_t value);
     void sendNightlight(bool enabled);
     void sendPreset(uint8_t preset);
     void sendSegmentValue(const char* key, uint8_t value);
@@ -57,8 +64,13 @@ class DigitalLedModule : public OpenKNX::Module
     void processFrame();
     void resetFrame();
     void publishColor();
+    void publishColorTemperature();
     void publishPreset();
     void publishEffects();
+    uint16_t cctToKelvin(uint8_t cct) const;
+    uint8_t kelvinToCct(uint16_t kelvin) const;
+    static void rgbToHsv(uint8_t red, uint8_t green, uint8_t blue, float& hue, float& saturation, float& value);
+    static void hsvToRgb(float hue, float saturation, float value, uint8_t& red, uint8_t& green, uint8_t& blue);
 };
 
 extern DigitalLedModule digitalLedModule;

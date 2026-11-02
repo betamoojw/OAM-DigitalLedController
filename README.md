@@ -12,7 +12,9 @@ objects -> WLED JSON commands are sent over a dedicated UART.
 
 The first implementation targets an RP2040 board with a KNX TP UART and a
 second UART connected to WLED. It supports switching, absolute and relative
-brightness, RGB color, scenes/presets, palette, effect, speed and intensity.
+brightness, RGB/RGBW and HSV color, white, tunable/warm/cold white,
+scenes/presets, palette, effect, speed and intensity. Color channels and the
+effect index can also be adjusted with relative dimming objects.
 
 ## Build
 

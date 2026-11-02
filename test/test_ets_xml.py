@@ -49,7 +49,26 @@ class EtsXmlTests(unittest.TestCase):
             "DefaultEffect",
             "DefaultEffectSpeed",
             "DefaultEffectIntensity",
+            "CctKelvinMin",
+            "CctKelvinMax",
         }.issubset(names))
+
+        objects = {node.attrib["Name"]: node for node in root.findall(".//knx:ComObject", NS)}
+        expected_dpts = {
+            "Ch%C%White": "DPST-5-010",
+            "Ch%C%Cct": "DPST-7-600",
+            "Ch%C%WarmWhite": "DPST-5-010",
+            "Ch%C%ColdWhite": "DPST-5-010",
+            "Ch%C%Hue": "DPST-5-003",
+            "Ch%C%Saturation": "DPST-5-001",
+            "Ch%C%Value": "DPST-5-001",
+            "Ch%C%RGBW": "DPST-251-600",
+            "Ch%C%RedRel": "DPST-3-7",
+            "Ch%C%EffectRel": "DPST-3-7",
+        }
+        for name, dpt in expected_dpts.items():
+            self.assertIn(name, objects)
+            self.assertEqual(objects[name].attrib["DatapointType"], dpt)
 
         template = ET.parse(ROOT / "lib" / "OFM-DigitalLEDController" / "src" / "DigitalLedModule.templ.xml").getroot()
         visible_help = " ".join(node.attrib.get("Text", "") for node in template.iter())

@@ -1,13 +1,16 @@
 ﻿#include "DigitalLedModule.h"
 #undef memcpy_P
 #include <ArduinoJson.h>
+#include <algorithm>
 #include <charconv>
+#include <cmath>
 #include <cstring>
 
 DigitalLedModule digitalLedModule;
 
 namespace
 {
+    // WLED JSON API field reference: https://kno.wled.ge/interfaces/json-api/
     template <typename Document>
     void sendJson(Document& document)
     {
@@ -29,6 +32,20 @@ namespace
     {
         return !object.containsKey(key) || object[key].is<bool>();
     }
+
+    int16_t relativeDelta(uint8_t command, uint8_t step, uint16_t fullScale)
+    {
+        if (step == 0 || step > 7)
+            return 0;
+        const uint16_t divisor = 1U << (step - 1);
+        const int16_t delta = static_cast<int16_t>((fullScale + divisor / 2U) / divisor);
+        return command != 0 ? delta : -delta;
+    }
+
+    uint8_t addClamped(uint8_t value, int16_t delta)
+    {
+        return static_cast<uint8_t>(std::max(0, std::min(255, static_cast<int>(value) + delta)));
+    }
 }
 
 const std::string DigitalLedModule::name()
@@ -38,7 +55,7 @@ const std::string DigitalLedModule::name()
 
 const std::string DigitalLedModule::version()
 {
-    return "0.1.0";
+    return "0.2.0";
 }
 
 void DigitalLedModule::setup(bool configured)
@@ -94,11 +111,9 @@ void DigitalLedModule::processInputKo(GroupObject& ko)
     {
         const uint8_t command = ko.value(Dpt(3, 7, 0));
         const uint8_t step = ko.value(Dpt(3, 7, 1));
-        if (step == 0 || step > 7)
-            break;
-        const uint8_t delta = static_cast<uint8_t>((255U + (1U << (step - 1)) / 2U) / (1U << (step - 1)));
-        const uint16_t next = (command != 0) ? state.brightness + delta : (state.brightness > delta ? state.brightness - delta : 0);
-        sendBrightness(static_cast<uint8_t>(next > 255 ? 255 : next));
+        const int16_t delta = relativeDelta(command, step, 255);
+        if (delta != 0)
+            sendBrightness(addClamped(state.brightness, delta));
         break;
     }
     case APP_KoChRed:
@@ -114,6 +129,134 @@ void DigitalLedModule::processInputKo(GroupObject& ko)
     {
         const uint32_t color = ko.value(DPT_Colour_RGB);
         sendColor(static_cast<uint8_t>(color >> 16), static_cast<uint8_t>(color >> 8), static_cast<uint8_t>(color));
+        break;
+    }
+    case APP_KoChWhite:
+        sendRgbw(state.red, state.green, state.blue, ko.value(DPT_Value_1_Ucount));
+        break;
+    case APP_KoChCct:
+        sendColorTemperature(ko.value(Dpt(7, 600)));
+        break;
+    case APP_KoChWarmWhite:
+        sendWarmWhite(ko.value(DPT_Value_1_Ucount));
+        break;
+    case APP_KoChColdWhite:
+        sendColdWhite(ko.value(DPT_Value_1_Ucount));
+        break;
+    case APP_KoChHue:
+    {
+        float hue;
+        float saturation;
+        float value;
+        rgbToHsv(state.red, state.green, state.blue, hue, saturation, value);
+        const uint8_t rawHue = ko.value(DPT_Percent_U8);
+        const uint16_t hueDegrees = static_cast<uint16_t>((static_cast<uint32_t>(rawHue) * 360U + 127U) / 255U);
+        sendHsv(hueDegrees, static_cast<uint8_t>(std::round(saturation * 255.0F)), static_cast<uint8_t>(std::round(value * 255.0F)));
+        break;
+    }
+    case APP_KoChSaturation:
+    {
+        float hue;
+        float saturation;
+        float value;
+        rgbToHsv(state.red, state.green, state.blue, hue, saturation, value);
+        sendHsv(static_cast<uint16_t>(std::round(hue)), ko.value(DPT_Percent_U8), static_cast<uint8_t>(std::round(value * 255.0F)));
+        break;
+    }
+    case APP_KoChValue:
+    {
+        float hue;
+        float saturation;
+        float value;
+        rgbToHsv(state.red, state.green, state.blue, hue, saturation, value);
+        sendHsv(static_cast<uint16_t>(std::round(hue)), static_cast<uint8_t>(std::round(saturation * 255.0F)), ko.value(DPT_Percent_U8));
+        break;
+    }
+    case APP_KoChRGBW:
+    {
+        const uint32_t color = ko.value(DPT_Colour_RGBW);
+        const uint8_t mask = ko.value(Dpt(251, 600, 1));
+        if ((mask & 0x0F) == 0)
+            break;
+        sendRgbw(
+            (mask & 0x08) != 0 ? static_cast<uint8_t>(color >> 24) : state.red,
+            (mask & 0x04) != 0 ? static_cast<uint8_t>(color >> 16) : state.green,
+            (mask & 0x02) != 0 ? static_cast<uint8_t>(color >> 8) : state.blue,
+            (mask & 0x01) != 0 ? static_cast<uint8_t>(color) : state.white);
+        break;
+    }
+    case APP_KoChRedRel:
+    case APP_KoChGreenRel:
+    case APP_KoChBlueRel:
+    case APP_KoChWhiteRel:
+    {
+        const uint8_t command = ko.value(Dpt(3, 7, 0));
+        const uint8_t step = ko.value(Dpt(3, 7, 1));
+        const int16_t delta = relativeDelta(command, step, 255);
+        if (delta == 0)
+            break;
+        uint8_t red = state.red;
+        uint8_t green = state.green;
+        uint8_t blue = state.blue;
+        uint8_t white = state.white;
+        if (ko.asap() == APP_KoChRedRel)
+            red = addClamped(red, delta);
+        else if (ko.asap() == APP_KoChGreenRel)
+            green = addClamped(green, delta);
+        else if (ko.asap() == APP_KoChBlueRel)
+            blue = addClamped(blue, delta);
+        else
+            white = addClamped(white, delta);
+        sendRgbw(red, green, blue, white);
+        break;
+    }
+    case APP_KoChWarmWhiteRel:
+    case APP_KoChColdWhiteRel:
+    {
+        const int16_t delta = relativeDelta(ko.value(Dpt(3, 7, 0)), ko.value(Dpt(3, 7, 1)), 255);
+        if (delta == 0)
+            break;
+        const uint8_t warm = static_cast<uint8_t>((static_cast<uint16_t>(state.white) * (255U - state.cct) + 127U) / 255U);
+        const uint8_t cold = static_cast<uint8_t>((static_cast<uint16_t>(state.white) * state.cct + 127U) / 255U);
+        if (ko.asap() == APP_KoChWarmWhiteRel)
+            sendWarmWhite(addClamped(warm, delta));
+        else
+            sendColdWhite(addClamped(cold, delta));
+        break;
+    }
+    case APP_KoChHueRel:
+    case APP_KoChSaturationRel:
+    case APP_KoChValueRel:
+    {
+        const uint8_t command = ko.value(Dpt(3, 7, 0));
+        const uint8_t step = ko.value(Dpt(3, 7, 1));
+        const int16_t delta = relativeDelta(command, step, ko.asap() == APP_KoChHueRel ? 30 : 255);
+        if (delta == 0)
+            break;
+        float hue;
+        float saturation;
+        float value;
+        rgbToHsv(state.red, state.green, state.blue, hue, saturation, value);
+        if (ko.asap() == APP_KoChHueRel)
+        {
+            hue += delta;
+            while (hue < 0.0F)
+                hue += 360.0F;
+            while (hue >= 360.0F)
+                hue -= 360.0F;
+        }
+        else if (ko.asap() == APP_KoChSaturationRel)
+            saturation = std::max(0.0F, std::min(1.0F, saturation + delta / 255.0F));
+        else
+            value = std::max(0.0F, std::min(1.0F, value + delta / 255.0F));
+        sendHsv(static_cast<uint16_t>(std::round(hue)), static_cast<uint8_t>(std::round(saturation * 255.0F)), static_cast<uint8_t>(std::round(value * 255.0F)));
+        break;
+    }
+    case APP_KoChEffectRel:
+    {
+        const int16_t delta = relativeDelta(ko.value(Dpt(3, 7, 0)), ko.value(Dpt(3, 7, 1)), 10);
+        if (delta != 0)
+            sendSegmentValue("fx", addClamped(state.effect, delta));
         break;
     }
     case APP_KoChNightlightSw:
@@ -210,7 +353,7 @@ void DigitalLedModule::requestState()
 
 void DigitalLedModule::applyConfiguredDefaults()
 {
-    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1)> document;
+    StaticJsonDocument<JSON_OBJECT_SIZE(3) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(4)> document;
     document["on"] = state.brightness != 0;
     document["bri"] = state.brightness;
     document["seg"][0]["pal"] = state.palette;
@@ -246,19 +389,95 @@ void DigitalLedModule::sendBrightness(uint8_t brightness)
 
 void DigitalLedModule::sendColor(uint8_t red, uint8_t green, uint8_t blue)
 {
-    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_ARRAY_SIZE(3)> document;
-    document["on"] = red != 0 || green != 0 || blue != 0;
+    sendRgbw(red, green, blue, state.white);
+}
+
+void DigitalLedModule::sendRgbw(uint8_t red, uint8_t green, uint8_t blue, uint8_t white)
+{
+    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + JSON_ARRAY_SIZE(1) + JSON_ARRAY_SIZE(4)> document;
+    document["on"] = red != 0 || green != 0 || blue != 0 || white != 0;
     JsonArray color = document["seg"][0]["col"].createNestedArray();
     color.add(red);
     color.add(green);
     color.add(blue);
+    color.add(white);
     sendJson(document);
     state.red = red;
     state.green = green;
     state.blue = blue;
+    state.white = white;
     state.on = document["on"];
     publishColor();
     KoAPP_ChDimState.valueCompare(state.on, DPT_Switch);
+}
+
+void DigitalLedModule::sendColorTemperature(uint16_t kelvin)
+{
+    StaticJsonDocument<JSON_OBJECT_SIZE(1) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1)> document;
+    document["seg"][0]["cct"] = kelvinToCct(kelvin);
+    sendJson(document);
+    state.cct = document["seg"][0]["cct"];
+    publishColor();
+    publishColorTemperature();
+}
+
+void DigitalLedModule::sendWarmWhite(uint8_t value)
+{
+    const uint8_t cold = static_cast<uint8_t>((static_cast<uint16_t>(state.white) * state.cct + 127U) / 255U);
+    const uint16_t sum = static_cast<uint16_t>(value) + cold;
+    const uint8_t white = static_cast<uint8_t>(std::min(sum, static_cast<uint16_t>(255)));
+    const uint8_t cct = sum == 0 ? state.cct : static_cast<uint8_t>((static_cast<uint16_t>(cold) * 255U + sum / 2U) / sum);
+
+    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_ARRAY_SIZE(4)> document;
+    document["on"] = state.red != 0 || state.green != 0 || state.blue != 0 || white != 0;
+    JsonObject segment = document["seg"][0];
+    JsonArray color = segment["col"].createNestedArray();
+    color.add(state.red);
+    color.add(state.green);
+    color.add(state.blue);
+    color.add(white);
+    segment["cct"] = cct;
+    sendJson(document);
+    state.white = white;
+    state.cct = cct;
+    state.on = document["on"];
+    publishColor();
+    publishColorTemperature();
+    KoAPP_ChDimState.valueCompare(state.on, DPT_Switch);
+}
+
+void DigitalLedModule::sendColdWhite(uint8_t value)
+{
+    const uint8_t warm = static_cast<uint8_t>((static_cast<uint16_t>(state.white) * (255U - state.cct) + 127U) / 255U);
+    const uint16_t sum = static_cast<uint16_t>(warm) + value;
+    const uint8_t white = static_cast<uint8_t>(std::min(sum, static_cast<uint16_t>(255)));
+    const uint8_t cct = sum == 0 ? state.cct : static_cast<uint8_t>((static_cast<uint16_t>(value) * 255U + sum / 2U) / sum);
+
+    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_ARRAY_SIZE(4)> document;
+    document["on"] = state.red != 0 || state.green != 0 || state.blue != 0 || white != 0;
+    JsonObject segment = document["seg"][0];
+    JsonArray color = segment["col"].createNestedArray();
+    color.add(state.red);
+    color.add(state.green);
+    color.add(state.blue);
+    color.add(white);
+    segment["cct"] = cct;
+    sendJson(document);
+    state.white = white;
+    state.cct = cct;
+    state.on = document["on"];
+    publishColor();
+    publishColorTemperature();
+    KoAPP_ChDimState.valueCompare(state.on, DPT_Switch);
+}
+
+void DigitalLedModule::sendHsv(uint16_t hue, uint8_t saturation, uint8_t value)
+{
+    uint8_t red;
+    uint8_t green;
+    uint8_t blue;
+    hsvToRgb(hue, saturation / 255.0F, value / 255.0F, red, green, blue);
+    sendColor(red, green, blue);
 }
 
 void DigitalLedModule::sendNightlight(bool enabled)
@@ -287,7 +506,7 @@ void DigitalLedModule::sendPreset(uint8_t preset)
 
 void DigitalLedModule::sendSegmentValue(const char* key, uint8_t value)
 {
-    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1)> document;
+    StaticJsonDocument<JSON_OBJECT_SIZE(2) + JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1)> document;
     document["on"] = true;
     document["seg"][0][key] = value;
     sendJson(document);
@@ -392,7 +611,8 @@ void DigitalLedModule::processFrame()
     if (!segments.isNull() && segments.size() > 0)
         segment = segments[0];
     if (!segment.isNull() && (!validOptionalInteger(segment, "fx", 0, 255) || !validOptionalInteger(segment, "sx", 0, 255) ||
-                              !validOptionalInteger(segment, "ix", 0, 255) || !validOptionalInteger(segment, "pal", 0, 255)))
+                              !validOptionalInteger(segment, "ix", 0, 255) || !validOptionalInteger(segment, "pal", 0, 255) ||
+                              !validOptionalInteger(segment, "cct", 0, 255)))
         return;
 
     JsonArrayConst color;
@@ -437,11 +657,19 @@ void DigitalLedModule::processFrame()
         if (segment["pal"].is<int>())
             state.palette = segment["pal"];
         publishEffects();
+        if (segment["cct"].is<int>())
+        {
+            state.cct = segment["cct"];
+            publishColor();
+            publishColorTemperature();
+        }
         if (!color.isNull())
         {
             state.red = color[0];
             state.green = color[1];
             state.blue = color[2];
+            if (color.size() == 4)
+                state.white = color[3];
             publishColor();
         }
     }
@@ -464,6 +692,34 @@ void DigitalLedModule::publishColor()
     KoAPP_ChGreenValue.valueCompare(state.green, DPT_Percent_U8);
     KoAPP_ChBlueValue.valueCompare(state.blue, DPT_Percent_U8);
     KoAPP_ChRGBValue.valueCompare((static_cast<uint32_t>(state.red) << 16) | (static_cast<uint32_t>(state.green) << 8) | state.blue, DPT_Colour_RGB);
+    KoAPP_ChWhiteValue.valueCompare(state.white, DPT_Value_1_Ucount);
+    const uint8_t warm = static_cast<uint8_t>((static_cast<uint16_t>(state.white) * (255U - state.cct) + 127U) / 255U);
+    const uint8_t cold = static_cast<uint8_t>((static_cast<uint16_t>(state.white) * state.cct + 127U) / 255U);
+    KoAPP_ChWarmWhiteValue.valueCompare(warm, DPT_Value_1_Ucount);
+    KoAPP_ChColdWhiteValue.valueCompare(cold, DPT_Value_1_Ucount);
+
+    float hue;
+    float saturation;
+    float value;
+    rgbToHsv(state.red, state.green, state.blue, hue, saturation, value);
+    KoAPP_ChHueValue.valueCompare(static_cast<uint16_t>(std::round(hue)), DPT_Angle);
+    KoAPP_ChSaturationValue.valueCompare(static_cast<uint8_t>(std::round(saturation * 255.0F)), DPT_Percent_U8);
+    KoAPP_ChValueValue.valueCompare(static_cast<uint8_t>(std::round(value * 255.0F)), DPT_Percent_U8);
+
+    GroupObject& rgbwObject = KoAPP_ChRGBWValue;
+    const uint32_t rgbw = (static_cast<uint32_t>(state.red) << 24) | (static_cast<uint32_t>(state.green) << 16) |
+                          (static_cast<uint32_t>(state.blue) << 8) | state.white;
+    const bool changed = !rgbwObject.initialized() || static_cast<uint32_t>(rgbwObject.value(DPT_Colour_RGBW)) != rgbw ||
+                         static_cast<uint8_t>(rgbwObject.value(Dpt(251, 600, 1))) != 0x0F;
+    const bool valueEncoded = rgbwObject.valueNoSend(rgbw, DPT_Colour_RGBW);
+    const bool maskEncoded = rgbwObject.valueNoSend(static_cast<uint8_t>(0x0F), Dpt(251, 600, 1));
+    if (changed && valueEncoded && maskEncoded)
+        rgbwObject.objectWritten();
+}
+
+void DigitalLedModule::publishColorTemperature()
+{
+    KoAPP_ChCctValue.valueCompare(cctToKelvin(state.cct), Dpt(7, 600));
 }
 
 void DigitalLedModule::publishPreset()
@@ -481,3 +737,79 @@ void DigitalLedModule::publishEffects()
     KoAPP_ChEffectIntensityValue.valueCompare(state.effectIntensity, DPT_Percent_U8);
 }
 
+uint16_t DigitalLedModule::cctToKelvin(uint8_t cct) const
+{
+    uint16_t minimum = ParamAPP_CctKelvinMin;
+    uint16_t maximum = ParamAPP_CctKelvinMax;
+    if (minimum > maximum)
+        std::swap(minimum, maximum);
+    if (minimum == maximum)
+        return minimum;
+    return static_cast<uint16_t>(minimum + (static_cast<uint32_t>(cct) * (maximum - minimum) + 127U) / 255U);
+}
+
+uint8_t DigitalLedModule::kelvinToCct(uint16_t kelvin) const
+{
+    uint16_t minimum = ParamAPP_CctKelvinMin;
+    uint16_t maximum = ParamAPP_CctKelvinMax;
+    if (minimum > maximum)
+        std::swap(minimum, maximum);
+    if (minimum == maximum)
+        return 127;
+    kelvin = std::max(minimum, std::min(maximum, kelvin));
+    return static_cast<uint8_t>((static_cast<uint32_t>(kelvin - minimum) * 255U + (maximum - minimum) / 2U) / (maximum - minimum));
+}
+
+void DigitalLedModule::rgbToHsv(uint8_t red, uint8_t green, uint8_t blue, float& hue, float& saturation, float& value)
+{
+    const float r = red / 255.0F;
+    const float g = green / 255.0F;
+    const float b = blue / 255.0F;
+    const float maximum = std::max(r, std::max(g, b));
+    const float minimum = std::min(r, std::min(g, b));
+    const float delta = maximum - minimum;
+
+    hue = 0.0F;
+    if (delta > 0.0F)
+    {
+        if (maximum == r)
+            hue = 60.0F * std::fmod((g - b) / delta, 6.0F);
+        else if (maximum == g)
+            hue = 60.0F * (((b - r) / delta) + 2.0F);
+        else
+            hue = 60.0F * (((r - g) / delta) + 4.0F);
+        if (hue < 0.0F)
+            hue += 360.0F;
+    }
+    saturation = maximum == 0.0F ? 0.0F : delta / maximum;
+    value = maximum;
+}
+
+void DigitalLedModule::hsvToRgb(float hue, float saturation, float value, uint8_t& red, uint8_t& green, uint8_t& blue)
+{
+    while (hue < 0.0F)
+        hue += 360.0F;
+    while (hue >= 360.0F)
+        hue -= 360.0F;
+    const float chroma = value * saturation;
+    const float x = chroma * (1.0F - std::fabs(std::fmod(hue / 60.0F, 2.0F) - 1.0F));
+    const float match = value - chroma;
+    float r = 0.0F;
+    float g = 0.0F;
+    float b = 0.0F;
+    if (hue < 60.0F)
+        r = chroma, g = x;
+    else if (hue < 120.0F)
+        r = x, g = chroma;
+    else if (hue < 180.0F)
+        g = chroma, b = x;
+    else if (hue < 240.0F)
+        g = x, b = chroma;
+    else if (hue < 300.0F)
+        r = x, b = chroma;
+    else
+        r = chroma, b = x;
+    red = static_cast<uint8_t>(std::round((r + match) * 255.0F));
+    green = static_cast<uint8_t>(std::round((g + match) * 255.0F));
+    blue = static_cast<uint8_t>(std::round((b + match) * 255.0F));
+}

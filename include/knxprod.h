@@ -18,17 +18,17 @@
 #define MAIN_FirmwareName "Digital LED Controller"
 #define MAIN_OpenKnxId 0xAF
 #define MAIN_ApplicationNumber 1
-#define MAIN_ApplicationVersion 1
+#define MAIN_ApplicationVersion 2
 #define MAIN_ApplicationEncoding iso-8859-15
-#define MAIN_ParameterSize 5323
+#define MAIN_ParameterSize 5326
 #define MAIN_MaxKoNumber 947
-#define MAIN_OrderNumber "OAM-DigitalLEDController"
+#define MAIN_OrderNumber "OFM-DigitalLEDController"
 #define BASE_ModuleVersion 25
 #define UCT_ModuleVersion 5
 #define FCB_ModuleVersion 10
 #define LOG_ModuleVersion 68
 #define BTN_ModuleVersion 7
-#define APP_ModuleVersion 1
+#define APP_ModuleVersion 2
 // Parameter with single occurrence
 
 
@@ -4236,6 +4236,8 @@
 #define APP_DefaultEffect                       5319      // uint8_t
 #define APP_DefaultEffectSpeed                  5320      // uint8_t
 #define APP_DefaultEffectIntensity              5321      // uint8_t
+#define APP_CctKelvinMin                        5322      // uint16_t
+#define APP_CctKelvinMax                        5324      // uint16_t
 
 // WLED Statusabfrage
 #define ParamAPP_RequestXInterval                    (knx.paramByte(APP_RequestXInterval))
@@ -4255,6 +4257,10 @@
 #define ParamAPP_DefaultEffectSpeed                  (knx.paramByte(APP_DefaultEffectSpeed))
 // Effektintensität
 #define ParamAPP_DefaultEffectIntensity              (knx.paramByte(APP_DefaultEffectIntensity))
+// Minimale Farbtemperatur
+#define ParamAPP_CctKelvinMin                        (knx.paramWord(APP_CctKelvinMin))
+// Maximale Farbtemperatur
+#define ParamAPP_CctKelvinMax                        (knx.paramWord(APP_CctKelvinMax))
 
 #define APP_KoChDimSw 201
 #define APP_KoChDimRel 202
@@ -4283,6 +4289,32 @@
 #define APP_KoChEffectSpeedValue 225
 #define APP_KoChEffectIntensity 226
 #define APP_KoChEffectIntensityValue 227
+#define APP_KoChWhite 228
+#define APP_KoChWhiteValue 229
+#define APP_KoChCct 230
+#define APP_KoChCctValue 231
+#define APP_KoChWarmWhite 232
+#define APP_KoChWarmWhiteValue 233
+#define APP_KoChColdWhite 234
+#define APP_KoChColdWhiteValue 235
+#define APP_KoChHue 236
+#define APP_KoChHueValue 237
+#define APP_KoChSaturation 238
+#define APP_KoChSaturationValue 239
+#define APP_KoChValue 240
+#define APP_KoChValueValue 241
+#define APP_KoChRGBW 242
+#define APP_KoChRGBWValue 243
+#define APP_KoChRedRel 244
+#define APP_KoChGreenRel 245
+#define APP_KoChBlueRel 246
+#define APP_KoChWhiteRel 247
+#define APP_KoChWarmWhiteRel 248
+#define APP_KoChColdWhiteRel 249
+#define APP_KoChHueRel 250
+#define APP_KoChSaturationRel 251
+#define APP_KoChValueRel 252
+#define APP_KoChEffectRel 253
 
 // Schalten
 #define KoAPP_ChDimSw                             (knx.getGroupObject(APP_KoChDimSw))
@@ -4338,6 +4370,58 @@
 #define KoAPP_ChEffectIntensity                   (knx.getGroupObject(APP_KoChEffectIntensity))
 // Effect Intensity Status
 #define KoAPP_ChEffectIntensityValue              (knx.getGroupObject(APP_KoChEffectIntensityValue))
+// Weiss
+#define KoAPP_ChWhite                             (knx.getGroupObject(APP_KoChWhite))
+// Weiss Status
+#define KoAPP_ChWhiteValue                        (knx.getGroupObject(APP_KoChWhiteValue))
+// Farbtemperatur
+#define KoAPP_ChCct                               (knx.getGroupObject(APP_KoChCct))
+// Farbtemperatur Status
+#define KoAPP_ChCctValue                          (knx.getGroupObject(APP_KoChCctValue))
+// Warmweiss
+#define KoAPP_ChWarmWhite                         (knx.getGroupObject(APP_KoChWarmWhite))
+// Warmweiss Status
+#define KoAPP_ChWarmWhiteValue                    (knx.getGroupObject(APP_KoChWarmWhiteValue))
+// Kaltweiss
+#define KoAPP_ChColdWhite                         (knx.getGroupObject(APP_KoChColdWhite))
+// Kaltweiss Status
+#define KoAPP_ChColdWhiteValue                    (knx.getGroupObject(APP_KoChColdWhiteValue))
+// Farbton
+#define KoAPP_ChHue                               (knx.getGroupObject(APP_KoChHue))
+// Farbton Status
+#define KoAPP_ChHueValue                          (knx.getGroupObject(APP_KoChHueValue))
+// Saettigung
+#define KoAPP_ChSaturation                        (knx.getGroupObject(APP_KoChSaturation))
+// Saettigung Status
+#define KoAPP_ChSaturationValue                   (knx.getGroupObject(APP_KoChSaturationValue))
+// HSV Helligkeit
+#define KoAPP_ChValue                             (knx.getGroupObject(APP_KoChValue))
+// HSV Helligkeit Status
+#define KoAPP_ChValueValue                        (knx.getGroupObject(APP_KoChValueValue))
+// RGBW
+#define KoAPP_ChRGBW                              (knx.getGroupObject(APP_KoChRGBW))
+// RGBW Status
+#define KoAPP_ChRGBWValue                         (knx.getGroupObject(APP_KoChRGBWValue))
+// Rot relativ
+#define KoAPP_ChRedRel                            (knx.getGroupObject(APP_KoChRedRel))
+// Gruen relativ
+#define KoAPP_ChGreenRel                          (knx.getGroupObject(APP_KoChGreenRel))
+// Blau relativ
+#define KoAPP_ChBlueRel                           (knx.getGroupObject(APP_KoChBlueRel))
+// Weiss relativ
+#define KoAPP_ChWhiteRel                          (knx.getGroupObject(APP_KoChWhiteRel))
+// Warmweiss relativ
+#define KoAPP_ChWarmWhiteRel                      (knx.getGroupObject(APP_KoChWarmWhiteRel))
+// Kaltweiss relativ
+#define KoAPP_ChColdWhiteRel                      (knx.getGroupObject(APP_KoChColdWhiteRel))
+// Farbton relativ
+#define KoAPP_ChHueRel                            (knx.getGroupObject(APP_KoChHueRel))
+// Saettigung relativ
+#define KoAPP_ChSaturationRel                     (knx.getGroupObject(APP_KoChSaturationRel))
+// HSV Helligkeit relativ
+#define KoAPP_ChValueRel                          (knx.getGroupObject(APP_KoChValueRel))
+// Effect relativ
+#define KoAPP_ChEffectRel                         (knx.getGroupObject(APP_KoChEffectRel))
 
 
 // enumeration types

@@ -1,12 +1,12 @@
 #pragma once
 
-#define MAIN_Version "2a33d8b"
+#define MAIN_Version "77684c2"
 #define KNX_Version "2.3.1+7124a64"
-#define MODULE_DigitalLEDController_Version "0.1.0+2a33d8b"
+#define MODULE_DigitalLEDController_Version "0.2.0+77684c2"
 #define MODULE_DigitalLEDController_Version_Major 0
-#define MODULE_DigitalLEDController_Version_Minor 1
+#define MODULE_DigitalLEDController_Version_Minor 2
 #define MODULE_DigitalLEDController_Version_Revision 0
-#define MODULE_DigitalLEDController_ETS 1
+#define MODULE_DigitalLEDController_ETS 2
 #define MODULE_Common_Version "1.9.1+66bc4af"
 #define MODULE_Common_Version_Major 1
 #define MODULE_Common_Version_Minor 9
