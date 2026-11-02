@@ -4,7 +4,7 @@
 
 测试平台：Windows / RP2040 PlatformIO
 
-源码基线：`62ea8be`（包含尚未提交的 0.6.0 工作树改动）
+源码基线：`12f01a5`（包含尚未提交的 ETS 6.4.1 兼容性修复）
 
 ## 1. 测试环境
 
@@ -78,6 +78,10 @@ OpenKNXproducer 完整性检查全部通过，包括：
 - FunctionBlocks 起始偏移：410。
 - 对象 410 未被 Digital LED 模块使用。
 - Development 与 Release XML 均能生成产品。
+- 两个 `.knxprod` 内均不存在非法的
+  `TypeRestriction UIHint="CheckBox"`。
+- 两个 `.knxprod` 内的 Digital LED 布尔类型均使用 ETS 6.4.1 接受的
+  `TypeNumber UIHint="CheckBox"`。
 
 ## 4. Release 固件构建
 
@@ -92,8 +96,8 @@ pio run -e release_OAM_DigitalLEDController
 | 资源 | 使用量 |
 |---|---:|
 | RAM | 65,980 / 262,144 字节（25.2%） |
-| 应用 Flash | 472,888 / 1,458,176 字节（32.4%） |
-| 固件分区 | 484,924 字节 |
+| 应用 Flash | 472,856 / 1,458,176 字节（32.4%） |
+| 固件分区 | 484,892 字节 |
 | KNX DATA | 18,732 / 32,768 字节 |
 | KNX FREE | 14,036 字节 |
 

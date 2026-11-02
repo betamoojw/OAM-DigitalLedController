@@ -162,6 +162,25 @@ class EtsXmlTests(unittest.TestCase):
 
     def test_module_xml_exposes_runtime_parameters_and_help(self):
         root = ET.parse(ROOT / "lib" / "OFM-DigitalLEDController" / "src" / "DigitalLedModule.share.xml").getroot()
+        bool_type = root.find(".//knx:ParameterType[@Name='Bool']", NS)
+        self.assertIsNotNone(bool_type)
+        bool_number = bool_type.find("knx:TypeNumber", NS)
+        self.assertIsNotNone(bool_number)
+        self.assertEqual(
+            bool_number.attrib,
+            {
+                "SizeInBit": "1",
+                "Type": "unsignedInt",
+                "minInclusive": "0",
+                "maxInclusive": "1",
+                "UIHint": "CheckBox",
+            },
+        )
+        self.assertFalse(
+            root.findall(".//knx:TypeRestriction[@UIHint='CheckBox']", NS),
+            "ETS 6.4 rejects CheckBox as a TypeRestriction UIHint",
+        )
+
         names = {node.attrib["Name"] for node in root.findall(".//knx:Parameter", NS)}
         self.assertTrue({
             "RequestXInterval",

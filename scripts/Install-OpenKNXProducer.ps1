@@ -12,7 +12,7 @@ if ($null -ne $cachedProducer) {
     exit 0
 }
 
-$release = Invoke-RestMethod -Headers @{ "User-Agent" = "OFM-DigitalLEDController-CI" } `
+$release = Invoke-RestMethod -Headers @{ "User-Agent" = "OAM-DigitalLEDController-CI" } `
     -Uri "https://api.github.com/repos/OpenKNX/OpenKNXproducer/releases/tags/v$Version"
 $asset = $release.assets | Where-Object { $_.name -match "(?i)\.zip$" } | Select-Object -First 1
 if ($null -eq $asset) {
@@ -20,7 +20,7 @@ if ($null -eq $asset) {
 }
 
 $archive = Join-Path $env:TEMP $asset.name
-Invoke-WebRequest -Headers @{ "User-Agent" = "OFM-DigitalLEDController-CI" } -Uri $asset.browser_download_url -OutFile $archive
+Invoke-WebRequest -Headers @{ "User-Agent" = "OAM-DigitalLEDController-CI" } -Uri $asset.browser_download_url -OutFile $archive
 if (Test-Path $destinationPath) { Remove-Item $destinationPath -Recurse -Force }
 Expand-Archive -Path $archive -DestinationPath $destinationPath -Force
 $producer = Get-ChildItem $destinationPath -Recurse -Filter "OpenKNXproducer-x64.exe" | Select-Object -First 1

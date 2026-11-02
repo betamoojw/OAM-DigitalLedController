@@ -3,7 +3,7 @@
 <KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
   <op:minOpenKNXproducerVersion value="4.3.12" />
   <op:config href="DigitalLEDController.conf.xml" />
-  <op:ETS OpenKnxId="0xAF" ApplicationNumber="0x01" ApplicationVersion="%LED_ApplicationVersion%" ReplacesVersions="%LED_ReplacesVersions%" ApplicationRevision="0" ProductName="Digital LED Controller" ApplicationName="OFM-DigitalLEDController" OrderNumber="OFM-DigitalLEDController" />
+  <op:ETS OpenKnxId="0xAF" ApplicationNumber="0x01" ApplicationVersion="%LED_ApplicationVersion%" ReplacesVersions="%LED_ReplacesVersions%" ApplicationRevision="0" ProductName="Digital LED Controller" ApplicationName="OAM-DigitalLEDController" OrderNumber="OAM-DigitalLEDController" />
 
   <op:define prefix="BASE" ModuleType="10" share="../lib/OGM-Common/src/Common.share.xml">
     <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />

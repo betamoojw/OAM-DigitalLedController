@@ -22,7 +22,7 @@
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 5374
 #define MAIN_MaxKoNumber 947
-#define MAIN_OrderNumber "OFM-DigitalLEDController"
+#define MAIN_OrderNumber "OAM-DigitalLEDController"
 #define BASE_ModuleVersion 25
 #define UCT_ModuleVersion 5
 #define FCB_ModuleVersion 10

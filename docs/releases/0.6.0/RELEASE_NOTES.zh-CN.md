@@ -14,6 +14,12 @@ WLED 串口 `state`/`info` 回复中稳定验证的字段。
 
 ## 主要新增功能
 
+### ETS 兼容性
+
+- 布尔参数使用 ETS 6.4.1 接受的 `TypeNumber UIHint="CheckBox"` 表达。
+- Development 和 Release `.knxprod` 均不包含非法的
+  `TypeRestriction UIHint="CheckBox"`。
+
 ### 多 Segment
 
 - 增加三个可配置附加 Segment。
@@ -93,5 +99,5 @@ WLED 串口 `state`/`info` 回复中稳定验证的字段。
 
 ## 源码状态
 
-此发布包由 Git 基线 `62ea8be` 加当前 0.6.0 工作树改动构建。创建发布包时
-改动尚未提交，因此正式打标签或公开发布前应先提交源码，并再次执行完整 CI。
+此发布包由 Git 基线 `12f01a5` 加尚未提交的 ETS 6.4.1 兼容性修复构建。
+正式打标签或公开发布前应先提交修复源码，并再次执行完整 CI。
