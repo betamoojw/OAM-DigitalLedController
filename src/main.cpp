@@ -5,7 +5,7 @@
 #include "VirtualButtonModule.h"
 #include "hardware.h"
 
-const uint8_t firmwareRevision = 0;
+const uint8_t firmwareRevision = 1;
 
 void setup()
 {

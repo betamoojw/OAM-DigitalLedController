@@ -9,7 +9,7 @@ ROOT = Path(__file__).parents[1]
 class FirmwareStartupTests(unittest.TestCase):
     def test_runtime_uses_declared_firmware_revision(self):
         source = (ROOT / "src" / "main.cpp").read_text(encoding="utf-8")
-        self.assertIn("const uint8_t firmwareRevision = 0;", source)
+        self.assertIn("const uint8_t firmwareRevision = 1;", source)
         self.assertIn("openknx.init(firmwareRevision);", source)
 
     def test_modules_have_stable_unique_flash_ids(self):
