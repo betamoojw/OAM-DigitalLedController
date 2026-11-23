@@ -7,236 +7,236 @@
         <ApplicationProgram Id="%AID%">
           <Static>
             <ComObjectRefs>
-              <ComObjectRef Id="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_O-%TT%%CC%001" Text="Schalten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_O-%TT%%CC%002" Text="Relativ dimmen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_O-%TT%%CC%003" Text="Helligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401" RefId="%AID%_O-%TT%%CC%004" Text="Helligkeitsstatus" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_O-%TT%%CC%005" Text="Helligkeitswert" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%006_R-%TT%%CC%00601" RefId="%AID%_O-%TT%%CC%006" Text="Szene" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%007_R-%TT%%CC%00701" RefId="%AID%_O-%TT%%CC%007" Text="Szenenstatus" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%008_R-%TT%%CC%00801" RefId="%AID%_O-%TT%%CC%008" Text="Rot" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%009_R-%TT%%CC%00901" RefId="%AID%_O-%TT%%CC%009" Text="Rot Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%001_R-%TT%%CC%00101" RefId="%AID%_O-%TT%%CC%001" Text="Switching" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%002_R-%TT%%CC%00201" RefId="%AID%_O-%TT%%CC%002" Text="Relative dimming" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%003_R-%TT%%CC%00301" RefId="%AID%_O-%TT%%CC%003" Text="Brightness" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%004_R-%TT%%CC%00401" RefId="%AID%_O-%TT%%CC%004" Text="On/off status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%005_R-%TT%%CC%00501" RefId="%AID%_O-%TT%%CC%005" Text="Brightness status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%006_R-%TT%%CC%00601" RefId="%AID%_O-%TT%%CC%006" Text="Scene control" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%007_R-%TT%%CC%00701" RefId="%AID%_O-%TT%%CC%007" Text="Scene status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%008_R-%TT%%CC%00801" RefId="%AID%_O-%TT%%CC%008" Text="Red" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%009_R-%TT%%CC%00901" RefId="%AID%_O-%TT%%CC%009" Text="Red status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%010_R-%TT%%CC%01001" RefId="%AID%_O-%TT%%CC%010" Text="Green" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_O-%TT%%CC%011" Text="Green Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_O-%TT%%CC%012" Text="Blau" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%013_R-%TT%%CC%01301" RefId="%AID%_O-%TT%%CC%013" Text="Blau Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_O-%TT%%CC%011" Text="Green status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_O-%TT%%CC%012" Text="Blue" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%013_R-%TT%%CC%01301" RefId="%AID%_O-%TT%%CC%013" Text="Blue status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%014_R-%TT%%CC%01401" RefId="%AID%_O-%TT%%CC%014" Text="RGB" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%015_R-%TT%%CC%01501" RefId="%AID%_O-%TT%%CC%015" Text="RGB Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%016_R-%TT%%CC%01601" RefId="%AID%_O-%TT%%CC%016" Text="Nachtlicht" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%017_R-%TT%%CC%01701" RefId="%AID%_O-%TT%%CC%017" Text="Nachtlicht Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%015_R-%TT%%CC%01501" RefId="%AID%_O-%TT%%CC%015" Text="RGB status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%016_R-%TT%%CC%01601" RefId="%AID%_O-%TT%%CC%016" Text="Nightlight" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%017_R-%TT%%CC%01701" RefId="%AID%_O-%TT%%CC%017" Text="Nightlight status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%018_R-%TT%%CC%01801" RefId="%AID%_O-%TT%%CC%018" Text="Preset" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%019_R-%TT%%CC%01901" RefId="%AID%_O-%TT%%CC%019" Text="Preset Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%019_R-%TT%%CC%01901" RefId="%AID%_O-%TT%%CC%019" Text="Preset status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%020_R-%TT%%CC%02001" RefId="%AID%_O-%TT%%CC%020" Text="Palette" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%021_R-%TT%%CC%02101" RefId="%AID%_O-%TT%%CC%021" Text="Palette Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%021_R-%TT%%CC%02101" RefId="%AID%_O-%TT%%CC%021" Text="Palette status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%022_R-%TT%%CC%02201" RefId="%AID%_O-%TT%%CC%022" Text="Effect" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%023_R-%TT%%CC%02301" RefId="%AID%_O-%TT%%CC%023" Text="Effect Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%024_R-%TT%%CC%02401" RefId="%AID%_O-%TT%%CC%024" Text="Effect Speed" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%025_R-%TT%%CC%02501" RefId="%AID%_O-%TT%%CC%025" Text="Effect Speed Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%026_R-%TT%%CC%02601" RefId="%AID%_O-%TT%%CC%026" Text="Effect Intensity" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%027_R-%TT%%CC%02701" RefId="%AID%_O-%TT%%CC%027" Text="Effect Intensity Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%028_R-%TT%%CC%02801" RefId="%AID%_O-%TT%%CC%028" Text="Weiss" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%029_R-%TT%%CC%02901" RefId="%AID%_O-%TT%%CC%029" Text="Weiss Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%030_R-%TT%%CC%03001" RefId="%AID%_O-%TT%%CC%030" Text="Farbtemperatur" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%031_R-%TT%%CC%03101" RefId="%AID%_O-%TT%%CC%031" Text="Farbtemperatur Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%032_R-%TT%%CC%03201" RefId="%AID%_O-%TT%%CC%032" Text="Warmweiss" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%033_R-%TT%%CC%03301" RefId="%AID%_O-%TT%%CC%033" Text="Warmweiss Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%034_R-%TT%%CC%03401" RefId="%AID%_O-%TT%%CC%034" Text="Kaltweiss" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%035_R-%TT%%CC%03501" RefId="%AID%_O-%TT%%CC%035" Text="Kaltweiss Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%036_R-%TT%%CC%03601" RefId="%AID%_O-%TT%%CC%036" Text="Farbton" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%037_R-%TT%%CC%03701" RefId="%AID%_O-%TT%%CC%037" Text="Farbton Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%038_R-%TT%%CC%03801" RefId="%AID%_O-%TT%%CC%038" Text="Saettigung" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%039_R-%TT%%CC%03901" RefId="%AID%_O-%TT%%CC%039" Text="Saettigung Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%040_R-%TT%%CC%04001" RefId="%AID%_O-%TT%%CC%040" Text="HSV Helligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%041_R-%TT%%CC%04101" RefId="%AID%_O-%TT%%CC%041" Text="HSV Helligkeit Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%023_R-%TT%%CC%02301" RefId="%AID%_O-%TT%%CC%023" Text="Effect status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%024_R-%TT%%CC%02401" RefId="%AID%_O-%TT%%CC%024" Text="Effect speed" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%025_R-%TT%%CC%02501" RefId="%AID%_O-%TT%%CC%025" Text="Effect speed status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%026_R-%TT%%CC%02601" RefId="%AID%_O-%TT%%CC%026" Text="Effect intensity" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%027_R-%TT%%CC%02701" RefId="%AID%_O-%TT%%CC%027" Text="Effect intensity status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%028_R-%TT%%CC%02801" RefId="%AID%_O-%TT%%CC%028" Text="White" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%029_R-%TT%%CC%02901" RefId="%AID%_O-%TT%%CC%029" Text="White status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%030_R-%TT%%CC%03001" RefId="%AID%_O-%TT%%CC%030" Text="Color temperature" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%031_R-%TT%%CC%03101" RefId="%AID%_O-%TT%%CC%031" Text="Color temperature status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%032_R-%TT%%CC%03201" RefId="%AID%_O-%TT%%CC%032" Text="Warm white" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%033_R-%TT%%CC%03301" RefId="%AID%_O-%TT%%CC%033" Text="Warm white status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%034_R-%TT%%CC%03401" RefId="%AID%_O-%TT%%CC%034" Text="Cool white" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%035_R-%TT%%CC%03501" RefId="%AID%_O-%TT%%CC%035" Text="Cool white status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%036_R-%TT%%CC%03601" RefId="%AID%_O-%TT%%CC%036" Text="Hue" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%037_R-%TT%%CC%03701" RefId="%AID%_O-%TT%%CC%037" Text="Hue status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%038_R-%TT%%CC%03801" RefId="%AID%_O-%TT%%CC%038" Text="Saturation" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%039_R-%TT%%CC%03901" RefId="%AID%_O-%TT%%CC%039" Text="Saturation status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%040_R-%TT%%CC%04001" RefId="%AID%_O-%TT%%CC%040" Text="HSV value" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%041_R-%TT%%CC%04101" RefId="%AID%_O-%TT%%CC%041" Text="HSV value status" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%042_R-%TT%%CC%04201" RefId="%AID%_O-%TT%%CC%042" Text="RGBW" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%043_R-%TT%%CC%04301" RefId="%AID%_O-%TT%%CC%043" Text="RGBW Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%044_R-%TT%%CC%04401" RefId="%AID%_O-%TT%%CC%044" Text="Rot relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%045_R-%TT%%CC%04501" RefId="%AID%_O-%TT%%CC%045" Text="Gruen relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%046_R-%TT%%CC%04601" RefId="%AID%_O-%TT%%CC%046" Text="Blau relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%047_R-%TT%%CC%04701" RefId="%AID%_O-%TT%%CC%047" Text="Weiss relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%048_R-%TT%%CC%04801" RefId="%AID%_O-%TT%%CC%048" Text="Warmweiss relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%049_R-%TT%%CC%04901" RefId="%AID%_O-%TT%%CC%049" Text="Kaltweiss relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%050_R-%TT%%CC%05001" RefId="%AID%_O-%TT%%CC%050" Text="Farbton relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%051_R-%TT%%CC%05101" RefId="%AID%_O-%TT%%CC%051" Text="Saettigung relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%052_R-%TT%%CC%05201" RefId="%AID%_O-%TT%%CC%052" Text="HSV Helligkeit relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%053_R-%TT%%CC%05301" RefId="%AID%_O-%TT%%CC%053" Text="Effect relativ" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%054_R-%TT%%CC%05401" RefId="%AID%_O-%TT%%CC%054" Text="Segment schalten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%055_R-%TT%%CC%05501" RefId="%AID%_O-%TT%%CC%055" Text="Segment Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%056_R-%TT%%CC%05601" RefId="%AID%_O-%TT%%CC%056" Text="Segment Helligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%057_R-%TT%%CC%05701" RefId="%AID%_O-%TT%%CC%057" Text="Segment Helligkeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%058_R-%TT%%CC%05801" RefId="%AID%_O-%TT%%CC%058" Text="Segment umkehren" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%059_R-%TT%%CC%05901" RefId="%AID%_O-%TT%%CC%059" Text="Segment Umkehr Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%060_R-%TT%%CC%06001" RefId="%AID%_O-%TT%%CC%060" Text="Segment spiegeln" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%061_R-%TT%%CC%06101" RefId="%AID%_O-%TT%%CC%061" Text="Segment Spiegel Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%062_R-%TT%%CC%06201" RefId="%AID%_O-%TT%%CC%062" Text="Segment einfrieren" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%063_R-%TT%%CC%06301" RefId="%AID%_O-%TT%%CC%063" Text="Segment Einfrieren Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%064_R-%TT%%CC%06401" RefId="%AID%_O-%TT%%CC%064" Text="Segment auswaehlen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%065_R-%TT%%CC%06501" RefId="%AID%_O-%TT%%CC%065" Text="Segment Auswahl Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%066_R-%TT%%CC%06601" RefId="%AID%_O-%TT%%CC%066" Text="Uebergangszeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%067_R-%TT%%CC%06701" RefId="%AID%_O-%TT%%CC%067" Text="Uebergangszeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%068_R-%TT%%CC%06801" RefId="%AID%_O-%TT%%CC%068" Text="UDP Sync senden" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%069_R-%TT%%CC%06901" RefId="%AID%_O-%TT%%CC%069" Text="UDP Sync senden Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%070_R-%TT%%CC%07001" RefId="%AID%_O-%TT%%CC%070" Text="UDP Sync empfangen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%071_R-%TT%%CC%07101" RefId="%AID%_O-%TT%%CC%071" Text="UDP Sync empfangen Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%072_R-%TT%%CC%07201" RefId="%AID%_O-%TT%%CC%072" Text="UDP Sync Sendegruppen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%073_R-%TT%%CC%07301" RefId="%AID%_O-%TT%%CC%073" Text="UDP Sync Sendegruppen Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%074_R-%TT%%CC%07401" RefId="%AID%_O-%TT%%CC%074" Text="UDP Sync Empfangsgruppen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%075_R-%TT%%CC%07501" RefId="%AID%_O-%TT%%CC%075" Text="UDP Sync Empfangsgruppen Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%076_R-%TT%%CC%07601" RefId="%AID%_O-%TT%%CC%076" Text="Live Override" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%077_R-%TT%%CC%07701" RefId="%AID%_O-%TT%%CC%077" Text="Live Override Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%078_R-%TT%%CC%07801" RefId="%AID%_O-%TT%%CC%078" Text="Hauptsegment" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%079_R-%TT%%CC%07901" RefId="%AID%_O-%TT%%CC%079" Text="Hauptsegment Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%080_R-%TT%%CC%08001" RefId="%AID%_O-%TT%%CC%080" Text="Naechster Playlist-Eintrag" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%081_R-%TT%%CC%08101" RefId="%AID%_O-%TT%%CC%081" Text="Playlist Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%082_R-%TT%%CC%08201" RefId="%AID%_O-%TT%%CC%082" Text="Status abfragen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%083_R-%TT%%CC%08301" RefId="%AID%_O-%TT%%CC%083" Text="WLED neu starten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%084_R-%TT%%CC%08401" RefId="%AID%_O-%TT%%CC%084" Text="Effektparameter 1" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%085_R-%TT%%CC%08501" RefId="%AID%_O-%TT%%CC%085" Text="Effektparameter 1 Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%086_R-%TT%%CC%08601" RefId="%AID%_O-%TT%%CC%086" Text="Effektparameter 2" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%087_R-%TT%%CC%08701" RefId="%AID%_O-%TT%%CC%087" Text="Effektparameter 2 Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%088_R-%TT%%CC%08801" RefId="%AID%_O-%TT%%CC%088" Text="Effektparameter 3" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%089_R-%TT%%CC%08901" RefId="%AID%_O-%TT%%CC%089" Text="Effektparameter 3 Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%090_R-%TT%%CC%09001" RefId="%AID%_O-%TT%%CC%090" Text="Effektoption 1" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%091_R-%TT%%CC%09101" RefId="%AID%_O-%TT%%CC%091" Text="Effektoption 1 Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%092_R-%TT%%CC%09201" RefId="%AID%_O-%TT%%CC%092" Text="Effektoption 2" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%093_R-%TT%%CC%09301" RefId="%AID%_O-%TT%%CC%093" Text="Effektoption 2 Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%094_R-%TT%%CC%09401" RefId="%AID%_O-%TT%%CC%094" Text="Effektoption 3" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%095_R-%TT%%CC%09501" RefId="%AID%_O-%TT%%CC%095" Text="Effektoption 3 Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%096_R-%TT%%CC%09601" RefId="%AID%_O-%TT%%CC%096" Text="Segment Start" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%097_R-%TT%%CC%09701" RefId="%AID%_O-%TT%%CC%097" Text="Segment Start Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%098_R-%TT%%CC%09801" RefId="%AID%_O-%TT%%CC%098" Text="Segment Stop" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%099_R-%TT%%CC%09901" RefId="%AID%_O-%TT%%CC%099" Text="Segment Stop Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%100_R-%TT%%CC%10001" RefId="%AID%_O-%TT%%CC%100" Text="Segment Gruppierung" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%101_R-%TT%%CC%10101" RefId="%AID%_O-%TT%%CC%101" Text="Segment Gruppierung Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%102_R-%TT%%CC%10201" RefId="%AID%_O-%TT%%CC%102" Text="Segment Abstand" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%103_R-%TT%%CC%10301" RefId="%AID%_O-%TT%%CC%103" Text="Segment Abstand Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%104_R-%TT%%CC%10401" RefId="%AID%_O-%TT%%CC%104" Text="Segment Offset" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%105_R-%TT%%CC%10501" RefId="%AID%_O-%TT%%CC%105" Text="Segment Offset Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%106_R-%TT%%CC%10601" RefId="%AID%_O-%TT%%CC%106" Text="Sekundaerfarbe RGBW" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%107_R-%TT%%CC%10701" RefId="%AID%_O-%TT%%CC%107" Text="Sekundaerfarbe RGBW Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%108_R-%TT%%CC%10801" RefId="%AID%_O-%TT%%CC%108" Text="Tertiaerfarbe RGBW" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%109_R-%TT%%CC%10901" RefId="%AID%_O-%TT%%CC%109" Text="Tertiaerfarbe RGBW Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%110_R-%TT%%CC%11001" RefId="%AID%_O-%TT%%CC%110" Text="Playlist speichern" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%111_R-%TT%%CC%11101" RefId="%AID%_O-%TT%%CC%111" Text="Playlist starten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%112_R-%TT%%CC%11201" RefId="%AID%_O-%TT%%CC%112" Text="Preset-Aktion freigeben" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%113_R-%TT%%CC%11301" RefId="%AID%_O-%TT%%CC%113" Text="Preset-Aktion Freigabe Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%114_R-%TT%%CC%11401" RefId="%AID%_O-%TT%%CC%114" Text="Preset speichern" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%115_R-%TT%%CC%11501" RefId="%AID%_O-%TT%%CC%115" Text="Preset loeschen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%116_R-%TT%%CC%11601" RefId="%AID%_O-%TT%%CC%116" Text="Naechstes Preset" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%117_R-%TT%%CC%11701" RefId="%AID%_O-%TT%%CC%117" Text="Vorheriges Preset" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%118_R-%TT%%CC%11801" RefId="%AID%_O-%TT%%CC%118" Text="Zufaelliges Preset" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%119_R-%TT%%CC%11901" RefId="%AID%_O-%TT%%CC%119" Text="Realtime-Modus" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%120_R-%TT%%CC%12001" RefId="%AID%_O-%TT%%CC%120" Text="Realtime Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%121_R-%TT%%CC%12101" RefId="%AID%_O-%TT%%CC%121" Text="Realtime Segment Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%122_R-%TT%%CC%12201" RefId="%AID%_O-%TT%%CC%122" Text="Realtime Protokoll Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%123_R-%TT%%CC%12301" RefId="%AID%_O-%TT%%CC%123" Text="WLAN RSSI Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%124_R-%TT%%CC%12401" RefId="%AID%_O-%TT%%CC%124" Text="WLAN Signal Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%125_R-%TT%%CC%12501" RefId="%AID%_O-%TT%%CC%125" Text="Laufzeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%126_R-%TT%%CC%12601" RefId="%AID%_O-%TT%%CC%126" Text="Freier Speicher Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%127_R-%TT%%CC%12701" RefId="%AID%_O-%TT%%CC%127" Text="WLED Fehler Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%128_R-%TT%%CC%12801" RefId="%AID%_O-%TT%%CC%128" Text="WLED Build-ID Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%129_R-%TT%%CC%12901" RefId="%AID%_O-%TT%%CC%129" Text="Effektanzahl Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%130_R-%TT%%CC%13001" RefId="%AID%_O-%TT%%CC%130" Text="Palettenanzahl Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%131_R-%TT%%CC%13101" RefId="%AID%_O-%TT%%CC%131" Text="Maximale Segmente Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%132_R-%TT%%CC%13201" RefId="%AID%_O-%TT%%CC%132" Text="WLED Version Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%133_R-%TT%%CC%13301" RefId="%AID%_O-%TT%%CC%133" Text="LED-Map" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%134_R-%TT%%CC%13401" RefId="%AID%_O-%TT%%CC%134" Text="LED-Map Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%135_R-%TT%%CC%13501" RefId="%AID%_O-%TT%%CC%135" Text="Effekt-Timebase" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%136_R-%TT%%CC%13601" RefId="%AID%_O-%TT%%CC%136" Text="Nachtlichtdauer" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%137_R-%TT%%CC%13701" RefId="%AID%_O-%TT%%CC%137" Text="Nachtlichtdauer Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%138_R-%TT%%CC%13801" RefId="%AID%_O-%TT%%CC%138" Text="Nachtlichtmodus" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%139_R-%TT%%CC%13901" RefId="%AID%_O-%TT%%CC%139" Text="Nachtlichtmodus Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%140_R-%TT%%CC%14001" RefId="%AID%_O-%TT%%CC%140" Text="Nachtlicht Zielhelligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%141_R-%TT%%CC%14101" RefId="%AID%_O-%TT%%CC%141" Text="Nachtlicht Zielhelligkeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%142_R-%TT%%CC%14201" RefId="%AID%_O-%TT%%CC%142" Text="Nachtlicht Restzeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%143_R-%TT%%CC%14301" RefId="%AID%_O-%TT%%CC%143" Text="Segmentname" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%144_R-%TT%%CC%14401" RefId="%AID%_O-%TT%%CC%144" Text="Segmentname Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%145_R-%TT%%CC%14501" RefId="%AID%_O-%TT%%CC%145" Text="Segment vorhanden Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%146_R-%TT%%CC%14601" RefId="%AID%_O-%TT%%CC%146" Text="Segment-Aktion freigeben" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%147_R-%TT%%CC%14701" RefId="%AID%_O-%TT%%CC%147" Text="Segment-Aktion Freigabe Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%148_R-%TT%%CC%14801" RefId="%AID%_O-%TT%%CC%148" Text="Segment loeschen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%149_R-%TT%%CC%14901" RefId="%AID%_O-%TT%%CC%149" Text="Segmentaufbau anwenden" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%150_R-%TT%%CC%15001" RefId="%AID%_O-%TT%%CC%150" Text="Playlist stoppen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%151_R-%TT%%CC%15101" RefId="%AID%_O-%TT%%CC%151" Text="Playlist aktiv Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%152_R-%TT%%CC%15201" RefId="%AID%_O-%TT%%CC%152" Text="Preset aktiv Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%153_R-%TT%%CC%15301" RefId="%AID%_O-%TT%%CC%153" Text="Sync-Knotenanzahl Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%154_R-%TT%%CC%15401" RefId="%AID%_O-%TT%%CC%154" Text="Geschaetzter LED-Strom Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%155_R-%TT%%CC%15501" RefId="%AID%_O-%TT%%CC%155" Text="LED-Stromgrenze Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%156_R-%TT%%CC%15601" RefId="%AID%_O-%TT%%CC%156" Text="IP-Adresse Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%157_R-%TT%%CC%15701" RefId="%AID%_O-%TT%%CC%157" Text="WLAN BSSID Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%158_R-%TT%%CC%15801" RefId="%AID%_O-%TT%%CC%158" Text="WLAN-Kanal Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%159_R-%TT%%CC%15901" RefId="%AID%_O-%TT%%CC%159" Text="LED-Anzahl Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%160_R-%TT%%CC%16001" RefId="%AID%_O-%TT%%CC%160" Text="LED-FPS Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%161_R-%TT%%CC%16101" RefId="%AID%_O-%TT%%CC%161" Text="Matrixbreite Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%162_R-%TT%%CC%16201" RefId="%AID%_O-%TT%%CC%162" Text="Matrixhoehe Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%163_R-%TT%%CC%16301" RefId="%AID%_O-%TT%%CC%163" Text="WLED-Zeit setzen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%164_R-%TT%%CC%16401" RefId="%AID%_O-%TT%%CC%164" Text="Lokales Datum Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%165_R-%TT%%CC%16501" RefId="%AID%_O-%TT%%CC%165" Text="Lokale Zeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%166_R-%TT%%CC%16601" RefId="%AID%_O-%TT%%CC%166" Text="Segment 1 Schalten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%167_R-%TT%%CC%16701" RefId="%AID%_O-%TT%%CC%167" Text="Segment 1 Helligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%168_R-%TT%%CC%16801" RefId="%AID%_O-%TT%%CC%168" Text="Segment 1 Farbtemperatur" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%043_R-%TT%%CC%04301" RefId="%AID%_O-%TT%%CC%043" Text="RGBW status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%044_R-%TT%%CC%04401" RefId="%AID%_O-%TT%%CC%044" Text="Relative adjustment: red" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%045_R-%TT%%CC%04501" RefId="%AID%_O-%TT%%CC%045" Text="Relative adjustment: green" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%046_R-%TT%%CC%04601" RefId="%AID%_O-%TT%%CC%046" Text="Relative adjustment: blue" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%047_R-%TT%%CC%04701" RefId="%AID%_O-%TT%%CC%047" Text="Relative adjustment: white" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%048_R-%TT%%CC%04801" RefId="%AID%_O-%TT%%CC%048" Text="Relative adjustment: warm white" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%049_R-%TT%%CC%04901" RefId="%AID%_O-%TT%%CC%049" Text="Relative adjustment: cool white" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%050_R-%TT%%CC%05001" RefId="%AID%_O-%TT%%CC%050" Text="Relative adjustment: hue" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%051_R-%TT%%CC%05101" RefId="%AID%_O-%TT%%CC%051" Text="Relative adjustment: saturation" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%052_R-%TT%%CC%05201" RefId="%AID%_O-%TT%%CC%052" Text="Relative adjustment: HSV value" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%053_R-%TT%%CC%05301" RefId="%AID%_O-%TT%%CC%053" Text="Relative adjustment: effect index" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%054_R-%TT%%CC%05401" RefId="%AID%_O-%TT%%CC%054" Text="Segment switching" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%055_R-%TT%%CC%05501" RefId="%AID%_O-%TT%%CC%055" Text="Segment on/off status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%056_R-%TT%%CC%05601" RefId="%AID%_O-%TT%%CC%056" Text="Segment brightness" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%057_R-%TT%%CC%05701" RefId="%AID%_O-%TT%%CC%057" Text="Segment brightness status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%058_R-%TT%%CC%05801" RefId="%AID%_O-%TT%%CC%058" Text="Reverse segment" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%059_R-%TT%%CC%05901" RefId="%AID%_O-%TT%%CC%059" Text="Segment reverse status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%060_R-%TT%%CC%06001" RefId="%AID%_O-%TT%%CC%060" Text="Mirror segment" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%061_R-%TT%%CC%06101" RefId="%AID%_O-%TT%%CC%061" Text="Segment mirror status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%062_R-%TT%%CC%06201" RefId="%AID%_O-%TT%%CC%062" Text="Freeze segment" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%063_R-%TT%%CC%06301" RefId="%AID%_O-%TT%%CC%063" Text="Segment freeze status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%064_R-%TT%%CC%06401" RefId="%AID%_O-%TT%%CC%064" Text="Select segment" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%065_R-%TT%%CC%06501" RefId="%AID%_O-%TT%%CC%065" Text="Segment selection status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%066_R-%TT%%CC%06601" RefId="%AID%_O-%TT%%CC%066" Text="Transition time" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%067_R-%TT%%CC%06701" RefId="%AID%_O-%TT%%CC%067" Text="Transition time status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%068_R-%TT%%CC%06801" RefId="%AID%_O-%TT%%CC%068" Text="UDP sync send" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%069_R-%TT%%CC%06901" RefId="%AID%_O-%TT%%CC%069" Text="UDP sync send status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%070_R-%TT%%CC%07001" RefId="%AID%_O-%TT%%CC%070" Text="UDP sync receive" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%071_R-%TT%%CC%07101" RefId="%AID%_O-%TT%%CC%071" Text="UDP sync receive status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%072_R-%TT%%CC%07201" RefId="%AID%_O-%TT%%CC%072" Text="UDP sync send groups" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%073_R-%TT%%CC%07301" RefId="%AID%_O-%TT%%CC%073" Text="UDP sync send groups status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%074_R-%TT%%CC%07401" RefId="%AID%_O-%TT%%CC%074" Text="UDP sync receive groups" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%075_R-%TT%%CC%07501" RefId="%AID%_O-%TT%%CC%075" Text="UDP sync receive groups status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%076_R-%TT%%CC%07601" RefId="%AID%_O-%TT%%CC%076" Text="Live override" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%077_R-%TT%%CC%07701" RefId="%AID%_O-%TT%%CC%077" Text="Live override status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%078_R-%TT%%CC%07801" RefId="%AID%_O-%TT%%CC%078" Text="Main segment ID" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%079_R-%TT%%CC%07901" RefId="%AID%_O-%TT%%CC%079" Text="Main segment ID status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%080_R-%TT%%CC%08001" RefId="%AID%_O-%TT%%CC%080" Text="Next playlist entry" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%081_R-%TT%%CC%08101" RefId="%AID%_O-%TT%%CC%081" Text="Playlist ID status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%082_R-%TT%%CC%08201" RefId="%AID%_O-%TT%%CC%082" Text="Request WLED status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%083_R-%TT%%CC%08301" RefId="%AID%_O-%TT%%CC%083" Text="Reboot WLED" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%084_R-%TT%%CC%08401" RefId="%AID%_O-%TT%%CC%084" Text="Effect parameter 1" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%085_R-%TT%%CC%08501" RefId="%AID%_O-%TT%%CC%085" Text="Effect parameter 1 status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%086_R-%TT%%CC%08601" RefId="%AID%_O-%TT%%CC%086" Text="Effect parameter 2" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%087_R-%TT%%CC%08701" RefId="%AID%_O-%TT%%CC%087" Text="Effect parameter 2 status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%088_R-%TT%%CC%08801" RefId="%AID%_O-%TT%%CC%088" Text="Effect parameter 3" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%089_R-%TT%%CC%08901" RefId="%AID%_O-%TT%%CC%089" Text="Effect parameter 3 status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%090_R-%TT%%CC%09001" RefId="%AID%_O-%TT%%CC%090" Text="Effect option 1" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%091_R-%TT%%CC%09101" RefId="%AID%_O-%TT%%CC%091" Text="Effect option 1 status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%092_R-%TT%%CC%09201" RefId="%AID%_O-%TT%%CC%092" Text="Effect option 2" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%093_R-%TT%%CC%09301" RefId="%AID%_O-%TT%%CC%093" Text="Effect option 2 status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%094_R-%TT%%CC%09401" RefId="%AID%_O-%TT%%CC%094" Text="Effect option 3" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%095_R-%TT%%CC%09501" RefId="%AID%_O-%TT%%CC%095" Text="Effect option 3 status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%096_R-%TT%%CC%09601" RefId="%AID%_O-%TT%%CC%096" Text="Segment start" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%097_R-%TT%%CC%09701" RefId="%AID%_O-%TT%%CC%097" Text="Segment start status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%098_R-%TT%%CC%09801" RefId="%AID%_O-%TT%%CC%098" Text="Segment stop" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%099_R-%TT%%CC%09901" RefId="%AID%_O-%TT%%CC%099" Text="Segment stop status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%100_R-%TT%%CC%10001" RefId="%AID%_O-%TT%%CC%100" Text="Segment grouping" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%101_R-%TT%%CC%10101" RefId="%AID%_O-%TT%%CC%101" Text="Segment grouping status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%102_R-%TT%%CC%10201" RefId="%AID%_O-%TT%%CC%102" Text="Segment spacing" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%103_R-%TT%%CC%10301" RefId="%AID%_O-%TT%%CC%103" Text="Segment spacing status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%104_R-%TT%%CC%10401" RefId="%AID%_O-%TT%%CC%104" Text="Segment offset" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%105_R-%TT%%CC%10501" RefId="%AID%_O-%TT%%CC%105" Text="Segment offset status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%106_R-%TT%%CC%10601" RefId="%AID%_O-%TT%%CC%106" Text="Secondary RGBW color" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%107_R-%TT%%CC%10701" RefId="%AID%_O-%TT%%CC%107" Text="Secondary RGBW color status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%108_R-%TT%%CC%10801" RefId="%AID%_O-%TT%%CC%108" Text="Tertiary RGBW color" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%109_R-%TT%%CC%10901" RefId="%AID%_O-%TT%%CC%109" Text="Tertiary RGBW color status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%110_R-%TT%%CC%11001" RefId="%AID%_O-%TT%%CC%110" Text="Save playlist" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%111_R-%TT%%CC%11101" RefId="%AID%_O-%TT%%CC%111" Text="Start playlist" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%112_R-%TT%%CC%11201" RefId="%AID%_O-%TT%%CC%112" Text="Arm preset actions" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%113_R-%TT%%CC%11301" RefId="%AID%_O-%TT%%CC%113" Text="Preset actions armed status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%114_R-%TT%%CC%11401" RefId="%AID%_O-%TT%%CC%114" Text="Save preset" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%115_R-%TT%%CC%11501" RefId="%AID%_O-%TT%%CC%115" Text="Delete preset" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%116_R-%TT%%CC%11601" RefId="%AID%_O-%TT%%CC%116" Text="Next preset" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%117_R-%TT%%CC%11701" RefId="%AID%_O-%TT%%CC%117" Text="Previous preset" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%118_R-%TT%%CC%11801" RefId="%AID%_O-%TT%%CC%118" Text="Random preset" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%119_R-%TT%%CC%11901" RefId="%AID%_O-%TT%%CC%119" Text="Realtime mode" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%120_R-%TT%%CC%12001" RefId="%AID%_O-%TT%%CC%120" Text="Realtime mode status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%121_R-%TT%%CC%12101" RefId="%AID%_O-%TT%%CC%121" Text="Realtime segment status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%122_R-%TT%%CC%12201" RefId="%AID%_O-%TT%%CC%122" Text="Realtime protocol status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%123_R-%TT%%CC%12301" RefId="%AID%_O-%TT%%CC%123" Text="Wi-Fi RSSI" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%124_R-%TT%%CC%12401" RefId="%AID%_O-%TT%%CC%124" Text="Wi-Fi signal strength" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%125_R-%TT%%CC%12501" RefId="%AID%_O-%TT%%CC%125" Text="Uptime" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%126_R-%TT%%CC%12601" RefId="%AID%_O-%TT%%CC%126" Text="Free heap memory" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%127_R-%TT%%CC%12701" RefId="%AID%_O-%TT%%CC%127" Text="WLED error code" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%128_R-%TT%%CC%12801" RefId="%AID%_O-%TT%%CC%128" Text="WLED build ID" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%129_R-%TT%%CC%12901" RefId="%AID%_O-%TT%%CC%129" Text="Effect count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%130_R-%TT%%CC%13001" RefId="%AID%_O-%TT%%CC%130" Text="Palette count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%131_R-%TT%%CC%13101" RefId="%AID%_O-%TT%%CC%131" Text="Maximum segment count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%132_R-%TT%%CC%13201" RefId="%AID%_O-%TT%%CC%132" Text="WLED version" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%133_R-%TT%%CC%13301" RefId="%AID%_O-%TT%%CC%133" Text="LED map" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%134_R-%TT%%CC%13401" RefId="%AID%_O-%TT%%CC%134" Text="LED map status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%135_R-%TT%%CC%13501" RefId="%AID%_O-%TT%%CC%135" Text="Effect timebase" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%136_R-%TT%%CC%13601" RefId="%AID%_O-%TT%%CC%136" Text="Nightlight duration" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%137_R-%TT%%CC%13701" RefId="%AID%_O-%TT%%CC%137" Text="Nightlight duration status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%138_R-%TT%%CC%13801" RefId="%AID%_O-%TT%%CC%138" Text="Nightlight mode" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%139_R-%TT%%CC%13901" RefId="%AID%_O-%TT%%CC%139" Text="Nightlight mode status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%140_R-%TT%%CC%14001" RefId="%AID%_O-%TT%%CC%140" Text="Nightlight target brightness" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%141_R-%TT%%CC%14101" RefId="%AID%_O-%TT%%CC%141" Text="Nightlight target brightness status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%142_R-%TT%%CC%14201" RefId="%AID%_O-%TT%%CC%142" Text="Nightlight time remaining" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%143_R-%TT%%CC%14301" RefId="%AID%_O-%TT%%CC%143" Text="Segment name" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%144_R-%TT%%CC%14401" RefId="%AID%_O-%TT%%CC%144" Text="Segment name status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%145_R-%TT%%CC%14501" RefId="%AID%_O-%TT%%CC%145" Text="Segment present status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%146_R-%TT%%CC%14601" RefId="%AID%_O-%TT%%CC%146" Text="Arm segment deletion" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%147_R-%TT%%CC%14701" RefId="%AID%_O-%TT%%CC%147" Text="Segment deletion armed status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%148_R-%TT%%CC%14801" RefId="%AID%_O-%TT%%CC%148" Text="Delete segment" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%149_R-%TT%%CC%14901" RefId="%AID%_O-%TT%%CC%149" Text="Apply segment layout" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%150_R-%TT%%CC%15001" RefId="%AID%_O-%TT%%CC%150" Text="Stop playlist" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%151_R-%TT%%CC%15101" RefId="%AID%_O-%TT%%CC%151" Text="Playlist active status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%152_R-%TT%%CC%15201" RefId="%AID%_O-%TT%%CC%152" Text="Preset active status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%153_R-%TT%%CC%15301" RefId="%AID%_O-%TT%%CC%153" Text="UDP sync node count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%154_R-%TT%%CC%15401" RefId="%AID%_O-%TT%%CC%154" Text="Estimated LED current" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%155_R-%TT%%CC%15501" RefId="%AID%_O-%TT%%CC%155" Text="LED current limit" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%156_R-%TT%%CC%15601" RefId="%AID%_O-%TT%%CC%156" Text="IPv4 address" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%157_R-%TT%%CC%15701" RefId="%AID%_O-%TT%%CC%157" Text="Wi-Fi BSSID" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%158_R-%TT%%CC%15801" RefId="%AID%_O-%TT%%CC%158" Text="Wi-Fi channel" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%159_R-%TT%%CC%15901" RefId="%AID%_O-%TT%%CC%159" Text="LED count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%160_R-%TT%%CC%16001" RefId="%AID%_O-%TT%%CC%160" Text="LED frame rate" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%161_R-%TT%%CC%16101" RefId="%AID%_O-%TT%%CC%161" Text="Matrix width" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%162_R-%TT%%CC%16201" RefId="%AID%_O-%TT%%CC%162" Text="Matrix height" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%163_R-%TT%%CC%16301" RefId="%AID%_O-%TT%%CC%163" Text="Set WLED time" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%164_R-%TT%%CC%16401" RefId="%AID%_O-%TT%%CC%164" Text="Local date" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%165_R-%TT%%CC%16501" RefId="%AID%_O-%TT%%CC%165" Text="Local time" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%166_R-%TT%%CC%16601" RefId="%AID%_O-%TT%%CC%166" Text="Segment 1 on/off" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%167_R-%TT%%CC%16701" RefId="%AID%_O-%TT%%CC%167" Text="Segment 1 brightness" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%168_R-%TT%%CC%16801" RefId="%AID%_O-%TT%%CC%168" Text="Segment 1 color temperature" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%169_R-%TT%%CC%16901" RefId="%AID%_O-%TT%%CC%169" Text="Segment 1 RGBW" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%170_R-%TT%%CC%17001" RefId="%AID%_O-%TT%%CC%170" Text="Segment 1 Optionen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%171_R-%TT%%CC%17101" RefId="%AID%_O-%TT%%CC%171" Text="Segment 1 Name" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%172_R-%TT%%CC%17201" RefId="%AID%_O-%TT%%CC%172" Text="Segment 2 Schalten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%173_R-%TT%%CC%17301" RefId="%AID%_O-%TT%%CC%173" Text="Segment 2 Helligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%174_R-%TT%%CC%17401" RefId="%AID%_O-%TT%%CC%174" Text="Segment 2 Farbtemperatur" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%170_R-%TT%%CC%17001" RefId="%AID%_O-%TT%%CC%170" Text="Segment 1 options" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%171_R-%TT%%CC%17101" RefId="%AID%_O-%TT%%CC%171" Text="Segment 1 name" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%172_R-%TT%%CC%17201" RefId="%AID%_O-%TT%%CC%172" Text="Segment 2 on/off" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%173_R-%TT%%CC%17301" RefId="%AID%_O-%TT%%CC%173" Text="Segment 2 brightness" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%174_R-%TT%%CC%17401" RefId="%AID%_O-%TT%%CC%174" Text="Segment 2 color temperature" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%175_R-%TT%%CC%17501" RefId="%AID%_O-%TT%%CC%175" Text="Segment 2 RGBW" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%176_R-%TT%%CC%17601" RefId="%AID%_O-%TT%%CC%176" Text="Segment 2 Optionen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%177_R-%TT%%CC%17701" RefId="%AID%_O-%TT%%CC%177" Text="Segment 2 Name" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%178_R-%TT%%CC%17801" RefId="%AID%_O-%TT%%CC%178" Text="Segment 3 Schalten" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%179_R-%TT%%CC%17901" RefId="%AID%_O-%TT%%CC%179" Text="Segment 3 Helligkeit" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%180_R-%TT%%CC%18001" RefId="%AID%_O-%TT%%CC%180" Text="Segment 3 Farbtemperatur" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%176_R-%TT%%CC%17601" RefId="%AID%_O-%TT%%CC%176" Text="Segment 2 options" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%177_R-%TT%%CC%17701" RefId="%AID%_O-%TT%%CC%177" Text="Segment 2 name" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%178_R-%TT%%CC%17801" RefId="%AID%_O-%TT%%CC%178" Text="Segment 3 on/off" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%179_R-%TT%%CC%17901" RefId="%AID%_O-%TT%%CC%179" Text="Segment 3 brightness" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%180_R-%TT%%CC%18001" RefId="%AID%_O-%TT%%CC%180" Text="Segment 3 color temperature" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%181_R-%TT%%CC%18101" RefId="%AID%_O-%TT%%CC%181" Text="Segment 3 RGBW" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%182_R-%TT%%CC%18201" RefId="%AID%_O-%TT%%CC%182" Text="Segment 3 Optionen" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%183_R-%TT%%CC%18301" RefId="%AID%_O-%TT%%CC%183" Text="Segment 3 Name" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%184_R-%TT%%CC%18401" RefId="%AID%_O-%TT%%CC%184" Text="Matrix Start Y" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%185_R-%TT%%CC%18501" RefId="%AID%_O-%TT%%CC%185" Text="Matrix Stop Y" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%186_R-%TT%%CC%18601" RefId="%AID%_O-%TT%%CC%186" Text="Matrix Y umkehren" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%187_R-%TT%%CC%18701" RefId="%AID%_O-%TT%%CC%187" Text="Matrix Y spiegeln" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%188_R-%TT%%CC%18801" RefId="%AID%_O-%TT%%CC%188" Text="Matrix transponieren" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%189_R-%TT%%CC%18901" RefId="%AID%_O-%TT%%CC%189" Text="Segment Set" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%190_R-%TT%%CC%19001" RefId="%AID%_O-%TT%%CC%190" Text="Sound-Simulation" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%191_R-%TT%%CC%19101" RefId="%AID%_O-%TT%%CC%191" Text="1D-zu-2D Mapping" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%192_R-%TT%%CC%19201" RefId="%AID%_O-%TT%%CC%192" Text="Dateisystem belegt Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%193_R-%TT%%CC%19301" RefId="%AID%_O-%TT%%CC%193" Text="Dateisystem gesamt Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%194_R-%TT%%CC%19401" RefId="%AID%_O-%TT%%CC%194" Text="Preset-Aenderungszeit Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%195_R-%TT%%CC%19501" RefId="%AID%_O-%TT%%CC%195" Text="LED-Map Anzahl Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%196_R-%TT%%CC%19601" RefId="%AID%_O-%TT%%CC%196" Text="Realtime-Quell-IP Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%197_R-%TT%%CC%19701" RefId="%AID%_O-%TT%%CC%197" Text="WebSocket Clients Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%198_R-%TT%%CC%19801" RefId="%AID%_O-%TT%%CC%198" Text="WLED Online Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%199_R-%TT%%CC%19901" RefId="%AID%_O-%TT%%CC%199" Text="Letzte Antwort Alter Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%200_R-%TT%%CC%20001" RefId="%AID%_O-%TT%%CC%200" Text="JSON-Fehlerzaehler Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%201_R-%TT%%CC%20101" RefId="%AID%_O-%TT%%CC%201" Text="Zu grosse Frames Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%202_R-%TT%%CC%20201" RefId="%AID%_O-%TT%%CC%202" Text="UART-Ueberlauf Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%203_R-%TT%%CC%20301" RefId="%AID%_O-%TT%%CC%203" Text="LED-Stromauslastung Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%204_R-%TT%%CC%20401" RefId="%AID%_O-%TT%%CC%204" Text="LED-Strom Warnung Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%205_R-%TT%%CC%20501" RefId="%AID%_O-%TT%%CC%205" Text="LED-Stromgrenze ueberschritten Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%206_R-%TT%%CC%20601" RefId="%AID%_O-%TT%%CC%206" Text="RGBW vorhanden Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%207_R-%TT%%CC%20701" RefId="%AID%_O-%TT%%CC%207" Text="Weisskanal vorhanden Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%208_R-%TT%%CC%20801" RefId="%AID%_O-%TT%%CC%208" Text="CCT vorhanden Status" />
-              <ComObjectRef Id="%AID%_O-%TT%%CC%209_R-%TT%%CC%20901" RefId="%AID%_O-%TT%%CC%209" Text="Matrix aktiv Status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%182_R-%TT%%CC%18201" RefId="%AID%_O-%TT%%CC%182" Text="Segment 3 options" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%183_R-%TT%%CC%18301" RefId="%AID%_O-%TT%%CC%183" Text="Segment 3 name" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%184_R-%TT%%CC%18401" RefId="%AID%_O-%TT%%CC%184" Text="Matrix start Y" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%185_R-%TT%%CC%18501" RefId="%AID%_O-%TT%%CC%185" Text="Matrix stop Y" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%186_R-%TT%%CC%18601" RefId="%AID%_O-%TT%%CC%186" Text="Reverse matrix Y" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%187_R-%TT%%CC%18701" RefId="%AID%_O-%TT%%CC%187" Text="Mirror matrix Y" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%188_R-%TT%%CC%18801" RefId="%AID%_O-%TT%%CC%188" Text="Transpose matrix axes" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%189_R-%TT%%CC%18901" RefId="%AID%_O-%TT%%CC%189" Text="Segment set" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%190_R-%TT%%CC%19001" RefId="%AID%_O-%TT%%CC%190" Text="Sound simulation" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%191_R-%TT%%CC%19101" RefId="%AID%_O-%TT%%CC%191" Text="1D-to-2D mapping" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%192_R-%TT%%CC%19201" RefId="%AID%_O-%TT%%CC%192" Text="Filesystem space used" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%193_R-%TT%%CC%19301" RefId="%AID%_O-%TT%%CC%193" Text="Total filesystem space" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%194_R-%TT%%CC%19401" RefId="%AID%_O-%TT%%CC%194" Text="Preset file modification time" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%195_R-%TT%%CC%19501" RefId="%AID%_O-%TT%%CC%195" Text="LED map count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%196_R-%TT%%CC%19601" RefId="%AID%_O-%TT%%CC%196" Text="Realtime source IPv4 address" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%197_R-%TT%%CC%19701" RefId="%AID%_O-%TT%%CC%197" Text="WebSocket client count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%198_R-%TT%%CC%19801" RefId="%AID%_O-%TT%%CC%198" Text="WLED online status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%199_R-%TT%%CC%19901" RefId="%AID%_O-%TT%%CC%199" Text="Time since last WLED response" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%200_R-%TT%%CC%20001" RefId="%AID%_O-%TT%%CC%200" Text="JSON error count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%201_R-%TT%%CC%20101" RefId="%AID%_O-%TT%%CC%201" Text="Oversized frame count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%202_R-%TT%%CC%20201" RefId="%AID%_O-%TT%%CC%202" Text="UART overflow count" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%203_R-%TT%%CC%20301" RefId="%AID%_O-%TT%%CC%203" Text="LED current as a percentage of the limit" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%204_R-%TT%%CC%20401" RefId="%AID%_O-%TT%%CC%204" Text="LED current warning status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%205_R-%TT%%CC%20501" RefId="%AID%_O-%TT%%CC%205" Text="LED current limit exceeded status" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%206_R-%TT%%CC%20601" RefId="%AID%_O-%TT%%CC%206" Text="RGBW supported" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%207_R-%TT%%CC%20701" RefId="%AID%_O-%TT%%CC%207" Text="White channel supported" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%208_R-%TT%%CC%20801" RefId="%AID%_O-%TT%%CC%208" Text="CCT supported" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%209_R-%TT%%CC%20901" RefId="%AID%_O-%TT%%CC%209" Text="2D matrix active status" />
             </ComObjectRefs>
           </Static>
           <Dynamic>
             <ChannelIndependentBlock>
               <ParameterBlock Id="%AID%_PB-nnn" Text="Digital LED Controller" ShowInComObjectTree="true">
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="WLED Digital LED" UIHint="Headline" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Die Statusabfrage liest den aktuellen WLED-Zustand über die serielle Schnittstelle. Der Wert 0 deaktiviert die zyklische Abfrage." />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="The controller polls WLED for its current state over the serial interface. Select Disabled (0) to turn off periodic polling." />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00001_R-%TT%0000101" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Nachtlicht" UIHint="Headline" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Nightlight" UIHint="Headline" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00002_R-%TT%0000201" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00003_R-%TT%0000301" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00004_R-%TT%0000401" IndentLevel="1" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Startwerte und Effekte" UIHint="Headline" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Diese Werte werden beim Start an WLED übertragen und können anschließend über KNX geändert werden." />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Startup values and effects" UIHint="Headline" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="These values are sent to WLED at startup and can then be changed via KNX." />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00005_R-%TT%0000501" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00006_R-%TT%0000601" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00007_R-%TT%0000701" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00008_R-%TT%0000801" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00009_R-%TT%0000901" IndentLevel="1" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="Farbtemperatur" UIHint="Headline" />
-                <ParameterSeparator Id="%AID%_PS-nnn" Text="KNX-Farbtemperaturen in Kelvin werden auf den internen WLED-Bereich von 0 bis 255 abgebildet." />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="Color temperature" UIHint="Headline" />
+                <ParameterSeparator Id="%AID%_PS-nnn" Text="KNX color temperature values in kelvins are mapped to WLED's internal range of 0 to 255." />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00010_R-%TT%0001001" IndentLevel="1" />
                 <ParameterRefRef RefId="%AID%_UP-%TT%00011_R-%TT%0001101" IndentLevel="1" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="WLED JSON API" UIHint="Headline" />
@@ -278,7 +278,7 @@
                 <ParameterRefRef RefId="%AID%_UP-%TT%00075_R-%TT%0007501" IndentLevel="1" />
                 <choose ParamRefId="%AID%_UP-%TT%00064_R-%TT%0006401">
                   <when test="1">
-                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Die Segment-IDs muessen eindeutig sein und sich von der Haupt-Segment-ID unterscheiden." />
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Use a different ID for each additional segment. None may match the primary segment ID configured above." />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00065_R-%TT%0006501" IndentLevel="2" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00066_R-%TT%0006601" IndentLevel="2" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00067_R-%TT%0006701" IndentLevel="2" />
@@ -306,7 +306,7 @@
                 </choose>
                 <choose ParamRefId="%AID%_UP-%TT%00023_R-%TT%0002301">
                   <when test="1">
-                    <ParameterSeparator Id="%AID%_PS-nnn" Text="KNX Playlist mit bis zu fuenf Presets" UIHint="Headline" />
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="KNX playlist with up to five presets" UIHint="Headline" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00030_R-%TT%0003001" IndentLevel="2" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00031_R-%TT%0003101" IndentLevel="2" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00032_R-%TT%0003201" IndentLevel="2" />
@@ -330,7 +330,7 @@
                 </choose>
                 <choose ParamRefId="%AID%_UP-%TT%00024_R-%TT%0002401">
                   <when test="1">
-                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Preset-Verwaltung" UIHint="Headline" />
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="Preset management" UIHint="Headline" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00029_R-%TT%0002901" IndentLevel="2" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00049_R-%TT%0004901" IndentLevel="2" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%00050_R-%TT%0005001" IndentLevel="2" />

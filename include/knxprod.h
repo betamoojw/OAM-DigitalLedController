@@ -4371,155 +4371,155 @@
 #define     APP_EnableSegmentCapabilityObjectsMask 0x02
 #define     APP_EnableSegmentCapabilityObjectsShift 1
 
-// WLED Statusabfrage
+// WLED status polling interval
 #define ParamAPP_RequestXInterval                    (knx.paramByte(APP_RequestXInterval))
-// Nachtlichtdauer (Minuten)
+// Nightlight duration (minutes)
 #define ParamAPP_NightlightDuration                  (knx.paramByte(APP_NightlightDuration))
-// Nachtlichtmodus
+// Nightlight mode
 #define ParamAPP_NightlightMode                      ((knx.paramByte(APP_NightlightMode) & APP_NightlightModeMask) >> APP_NightlightModeShift)
-// Nachtlicht Zielhelligkeit
+// Nightlight target brightness
 #define ParamAPP_NightlightTargetBrightness          (knx.paramByte(APP_NightlightTargetBrightness))
-// Standardhelligkeit
+// Default brightness
 #define ParamAPP_DefaultBrightness                   (knx.paramByte(APP_DefaultBrightness))
-// Standardpalette
+// Default palette
 #define ParamAPP_DefaultPalette                      (knx.paramByte(APP_DefaultPalette))
-// Standardeffekt
+// Default effect
 #define ParamAPP_DefaultEffect                       (knx.paramByte(APP_DefaultEffect))
-// Effektgeschwindigkeit
+// Effect speed
 #define ParamAPP_DefaultEffectSpeed                  (knx.paramByte(APP_DefaultEffectSpeed))
-// Effektintensität
+// Effect intensity
 #define ParamAPP_DefaultEffectIntensity              (knx.paramByte(APP_DefaultEffectIntensity))
-// Minimale Farbtemperatur
+// Minimum color temperature
 #define ParamAPP_CctKelvinMin                        (knx.paramWord(APP_CctKelvinMin))
-// Maximale Farbtemperatur
+// Maximum color temperature
 #define ParamAPP_CctKelvinMax                        (knx.paramWord(APP_CctKelvinMax))
-// Standarduebergang (ms)
+// Default transition time (ms)
 #define ParamAPP_DefaultTransitionMs                 (knx.paramWord(APP_DefaultTransitionMs))
-// WLED Segment-ID
+// WLED segment ID
 #define ParamAPP_SegmentId                           (knx.paramByte(APP_SegmentId))
-// Segmentobjekte anzeigen
+// Show segment group objects
 #define ParamAPP_EnableSegmentObjects                ((bool)(knx.paramByte(APP_EnableSegmentObjects) & APP_EnableSegmentObjectsMask))
-// Sync-Objekte anzeigen
+// Show UDP sync group objects
 #define ParamAPP_EnableSyncObjects                   ((bool)(knx.paramByte(APP_EnableSyncObjects) & APP_EnableSyncObjectsMask))
-// Erweiterte Objekte anzeigen
+// Show advanced group objects
 #define ParamAPP_EnableAdvancedObjects               ((bool)(knx.paramByte(APP_EnableAdvancedObjects) & APP_EnableAdvancedObjectsMask))
-// Standard Sync-Sendegruppen
+// Default UDP sync send groups
 #define ParamAPP_DefaultSyncSendGroups               (knx.paramByte(APP_DefaultSyncSendGroups))
-// Standard Sync-Empfangsgruppen
+// Default UDP sync receive groups
 #define ParamAPP_DefaultSyncReceiveGroups            (knx.paramByte(APP_DefaultSyncReceiveGroups))
-// KNX-Aenderungen nicht per UDP synchronisieren
+// Do not broadcast KNX changes via UDP sync
 #define ParamAPP_SuppressSyncNotifications           ((bool)(knx.paramByte(APP_SuppressSyncNotifications) & APP_SuppressSyncNotificationsMask))
-// Effektparameter anzeigen
+// Show effect parameters
 #define ParamAPP_EnableEffectOptionObjects           ((bool)(knx.paramByte(APP_EnableEffectOptionObjects) & APP_EnableEffectOptionObjectsMask))
-// Segmentaufbau anzeigen
+// Show segment layout controls
 #define ParamAPP_EnableSegmentLayoutObjects          ((bool)(knx.paramByte(APP_EnableSegmentLayoutObjects) & APP_EnableSegmentLayoutObjectsMask))
-// Sekundaer- und Tertiaerfarben anzeigen
+// Show secondary and tertiary color controls
 #define ParamAPP_EnableSecondaryColorObjects         ((bool)(knx.paramByte(APP_EnableSecondaryColorObjects) & APP_EnableSecondaryColorObjectsMask))
-// Playlist-Objekte anzeigen
+// Show playlist group objects
 #define ParamAPP_EnablePlaylistObjects               ((bool)(knx.paramByte(APP_EnablePlaylistObjects) & APP_EnablePlaylistObjectsMask))
-// Preset-Verwaltung anzeigen
+// Show preset management controls
 #define ParamAPP_EnablePresetManagementObjects       ((bool)(knx.paramByte(APP_EnablePresetManagementObjects) & APP_EnablePresetManagementObjectsMask))
-// Realtime-Objekte anzeigen
+// Show realtime group objects
 #define ParamAPP_EnableRealtimeObjects               ((bool)(knx.paramByte(APP_EnableRealtimeObjects) & APP_EnableRealtimeObjectsMask))
-// Diagnoseobjekte anzeigen
+// Show diagnostic group objects
 #define ParamAPP_EnableHealthObjects                 ((bool)(knx.paramByte(APP_EnableHealthObjects) & APP_EnableHealthObjectsMask))
-// WLED-Faehigkeiten anzeigen
+// Show WLED capabilities
 #define ParamAPP_EnableCapabilityObjects             ((bool)(knx.paramByte(APP_EnableCapabilityObjects) & APP_EnableCapabilityObjectsMask))
-// LED-Map und Timebase anzeigen
+// Show LED map and effect timebase controls
 #define ParamAPP_EnableLedmapObjects                 ((bool)(knx.paramByte(APP_EnableLedmapObjects) & APP_EnableLedmapObjectsMask))
-// Preset speichern und loeschen erlauben
+// Allow saving and deleting presets
 #define ParamAPP_EnableDestructivePresetActions      ((bool)(knx.paramByte(APP_EnableDestructivePresetActions) & APP_EnableDestructivePresetActionsMask))
-// Playlist Preset-Speicherplatz
+// Preset slot for the playlist
 #define ParamAPP_PlaylistPresetSlot                  (knx.paramByte(APP_PlaylistPresetSlot))
-// Playlist Eintrag 1 Preset
+// Playlist entry 1: preset
 #define ParamAPP_PlaylistPreset1                     (knx.paramByte(APP_PlaylistPreset1))
-// Playlist Eintrag 1 Dauer (100 ms)
+// Playlist entry 1: duration (100 ms units)
 #define ParamAPP_PlaylistDuration1                   (knx.paramWord(APP_PlaylistDuration1))
-// Playlist Eintrag 1 Uebergang (100 ms)
+// Playlist entry 1: transition (100 ms units)
 #define ParamAPP_PlaylistTransition1                 (knx.paramWord(APP_PlaylistTransition1))
-// Playlist Eintrag 2 Preset
+// Playlist entry 2: preset
 #define ParamAPP_PlaylistPreset2                     (knx.paramByte(APP_PlaylistPreset2))
-// Playlist Eintrag 2 Dauer (100 ms)
+// Playlist entry 2: duration (100 ms units)
 #define ParamAPP_PlaylistDuration2                   (knx.paramWord(APP_PlaylistDuration2))
-// Playlist Eintrag 2 Uebergang (100 ms)
+// Playlist entry 2: transition (100 ms units)
 #define ParamAPP_PlaylistTransition2                 (knx.paramWord(APP_PlaylistTransition2))
-// Playlist Eintrag 3 Preset
+// Playlist entry 3: preset
 #define ParamAPP_PlaylistPreset3                     (knx.paramByte(APP_PlaylistPreset3))
-// Playlist Eintrag 3 Dauer (100 ms)
+// Playlist entry 3: duration (100 ms units)
 #define ParamAPP_PlaylistDuration3                   (knx.paramWord(APP_PlaylistDuration3))
-// Playlist Eintrag 3 Uebergang (100 ms)
+// Playlist entry 3: transition (100 ms units)
 #define ParamAPP_PlaylistTransition3                 (knx.paramWord(APP_PlaylistTransition3))
-// Playlist Eintrag 4 Preset (0 deaktiviert)
+// Playlist entry 4: preset (0 = disabled)
 #define ParamAPP_PlaylistPreset4                     (knx.paramByte(APP_PlaylistPreset4))
-// Playlist Eintrag 4 Dauer (100 ms)
+// Playlist entry 4: duration (100 ms units)
 #define ParamAPP_PlaylistDuration4                   (knx.paramWord(APP_PlaylistDuration4))
-// Playlist Eintrag 4 Uebergang (100 ms)
+// Playlist entry 4: transition (100 ms units)
 #define ParamAPP_PlaylistTransition4                 (knx.paramWord(APP_PlaylistTransition4))
-// Playlist Eintrag 5 Preset (0 deaktiviert)
+// Playlist entry 5: preset (0 = disabled)
 #define ParamAPP_PlaylistPreset5                     (knx.paramByte(APP_PlaylistPreset5))
-// Playlist Eintrag 5 Dauer (100 ms)
+// Playlist entry 5: duration (100 ms units)
 #define ParamAPP_PlaylistDuration5                   (knx.paramWord(APP_PlaylistDuration5))
-// Playlist Eintrag 5 Uebergang (100 ms)
+// Playlist entry 5: transition (100 ms units)
 #define ParamAPP_PlaylistTransition5                 (knx.paramWord(APP_PlaylistTransition5))
-// Playlist Wiederholungen (0 endlos)
+// Playlist repeat count (0 = repeat indefinitely)
 #define ParamAPP_PlaylistRepeat                      (knx.paramByte(APP_PlaylistRepeat))
-// Playlist End-Preset
+// Preset to apply when the playlist ends
 #define ParamAPP_PlaylistEnd                         (knx.paramByte(APP_PlaylistEnd))
-// Playlist zufaellig
+// Shuffle playlist
 #define ParamAPP_PlaylistShuffle                     ((bool)(knx.paramByte(APP_PlaylistShuffle) & APP_PlaylistShuffleMask))
-// Zufalls-Preset Minimum
+// Minimum random preset ID
 #define ParamAPP_PresetRandomMin                     (knx.paramByte(APP_PresetRandomMin))
-// Zufalls-Preset Maximum
+// Maximum random preset ID
 #define ParamAPP_PresetRandomMax                     (knx.paramByte(APP_PresetRandomMax))
-// Segmentgrenzen im Preset speichern
+// Save segment bounds in preset
 #define ParamAPP_PresetSaveSegmentBounds             ((bool)(knx.paramByte(APP_PresetSaveSegmentBounds) & APP_PresetSaveSegmentBoundsMask))
-// Helligkeit im Preset speichern
+// Save brightness in preset
 #define ParamAPP_PresetSaveBrightness                ((bool)(knx.paramByte(APP_PresetSaveBrightness) & APP_PresetSaveBrightnessMask))
-// Nur ausgewaehlte Segmente speichern
+// Save selected segments only
 #define ParamAPP_PresetSaveSelectedSegments          ((bool)(knx.paramByte(APP_PresetSaveSelectedSegments) & APP_PresetSaveSelectedSegmentsMask))
-// Nachtlicht-Laufzeitobjekte anzeigen
+// Show runtime nightlight controls
 #define ParamAPP_EnableNightlightRuntimeObjects      ((bool)(knx.paramByte(APP_EnableNightlightRuntimeObjects) & APP_EnableNightlightRuntimeObjectsMask))
-// Segmentverwaltung anzeigen
+// Show segment management controls
 #define ParamAPP_EnableSegmentManagementObjects      ((bool)(knx.paramByte(APP_EnableSegmentManagementObjects) & APP_EnableSegmentManagementObjectsMask))
-// Playlist-Laufzeitobjekte anzeigen
+// Show runtime playlist controls
 #define ParamAPP_EnablePlaylistRuntimeObjects        ((bool)(knx.paramByte(APP_EnablePlaylistRuntimeObjects) & APP_EnablePlaylistRuntimeObjectsMask))
-// Sync-Knotenstatus anzeigen
+// Show UDP sync node status
 #define ParamAPP_EnableSyncNodeObjects               ((bool)(knx.paramByte(APP_EnableSyncNodeObjects) & APP_EnableSyncNodeObjectsMask))
-// LED-Stromstatus anzeigen
+// Show LED current status
 #define ParamAPP_EnablePowerObjects                  ((bool)(knx.paramByte(APP_EnablePowerObjects) & APP_EnablePowerObjectsMask))
-// Netzwerkstatus anzeigen
+// Show network status
 #define ParamAPP_EnableNetworkObjects                ((bool)(knx.paramByte(APP_EnableNetworkObjects) & APP_EnableNetworkObjectsMask))
-// LED- und Matrixstatus anzeigen
+// Show LED and matrix status
 #define ParamAPP_EnableLedInfoObjects                ((bool)(knx.paramByte(APP_EnableLedInfoObjects) & APP_EnableLedInfoObjectsMask))
-// Zeitobjekte anzeigen
+// Show date and time group objects
 #define ParamAPP_EnableTimeObjects                   ((bool)(knx.paramByte(APP_EnableTimeObjects) & APP_EnableTimeObjectsMask))
-// Segment loeschen erlauben
+// Allow segment deletion
 #define ParamAPP_EnableDestructiveSegmentActions     ((bool)(knx.paramByte(APP_EnableDestructiveSegmentActions) & APP_EnableDestructiveSegmentActionsMask))
-// Preset zum Stoppen der Playlist
+// Preset to apply when stopping the playlist
 #define ParamAPP_PlaylistStopPreset                  (knx.paramByte(APP_PlaylistStopPreset))
-// Drei weitere Segmente anzeigen
+// Show three additional segments
 #define ParamAPP_EnableMultiSegmentObjects           ((bool)(knx.paramByte(APP_EnableMultiSegmentObjects) & APP_EnableMultiSegmentObjectsMask))
-// Zusaetzliches Segment 1 ID
+// Additional segment 1 ID
 #define ParamAPP_ManagedSegment1Id                   (knx.paramByte(APP_ManagedSegment1Id))
-// Zusaetzliches Segment 2 ID
+// Additional segment 2 ID
 #define ParamAPP_ManagedSegment2Id                   (knx.paramByte(APP_ManagedSegment2Id))
-// Zusaetzliches Segment 3 ID
+// Additional segment 3 ID
 #define ParamAPP_ManagedSegment3Id                   (knx.paramByte(APP_ManagedSegment3Id))
-// 2D-Matrixobjekte anzeigen
+// Show 2D matrix group objects
 #define ParamAPP_EnableMatrix2dObjects               ((bool)(knx.paramByte(APP_EnableMatrix2dObjects) & APP_EnableMatrix2dObjectsMask))
-// Dateisystem- und LED-Map-Status anzeigen
+// Show filesystem and LED map status
 #define ParamAPP_EnableFilesystemObjects             ((bool)(knx.paramByte(APP_EnableFilesystemObjects) & APP_EnableFilesystemObjectsMask))
-// Realtime-Quellenstatus anzeigen
+// Show realtime source status
 #define ParamAPP_EnableRealtimeSourceObjects         ((bool)(knx.paramByte(APP_EnableRealtimeSourceObjects) & APP_EnableRealtimeSourceObjectsMask))
-// Kommunikationsdiagnose anzeigen
+// Show communication diagnostics
 #define ParamAPP_EnableCommunicationHealthObjects    ((bool)(knx.paramByte(APP_EnableCommunicationHealthObjects) & APP_EnableCommunicationHealthObjectsMask))
-// WLED Offline-Timeout (Sekunden, 0 deaktiviert)
+// WLED offline timeout (seconds, 0 = disabled)
 #define ParamAPP_CommunicationTimeoutSeconds         (knx.paramByte(APP_CommunicationTimeoutSeconds))
-// LED-Stromwarnung anzeigen
+// Show LED current warnings
 #define ParamAPP_EnablePowerAlarmObjects             ((bool)(knx.paramByte(APP_EnablePowerAlarmObjects) & APP_EnablePowerAlarmObjectsMask))
-// LED-Strom Warnschwelle (Prozent)
+// LED current warning threshold (%)
 #define ParamAPP_PowerWarningPercent                 (knx.paramByte(APP_PowerWarningPercent))
-// LED-Faehigkeitsstatus anzeigen
+// Show LED capability status
 #define ParamAPP_EnableSegmentCapabilityObjects      ((bool)(knx.paramByte(APP_EnableSegmentCapabilityObjects) & APP_EnableSegmentCapabilityObjectsMask))
 
 #define APP_KoChDimSw 201
@@ -4732,423 +4732,423 @@
 #define APP_KoChHasCctState 408
 #define APP_KoChIsMatrixState 409
 
-// Schalten
+// Switching
 #define KoAPP_ChDimSw                             (knx.getGroupObject(APP_KoChDimSw))
-// Relativ dimmen
+// Relative dimming
 #define KoAPP_ChDimRel                            (knx.getGroupObject(APP_KoChDimRel))
-// Helligkeit
+// Brightness
 #define KoAPP_ChDimAbs                            (knx.getGroupObject(APP_KoChDimAbs))
-// Helligkeitsstatus
+// On/off status
 #define KoAPP_ChDimState                          (knx.getGroupObject(APP_KoChDimState))
-// Helligkeitswert
+// Brightness status
 #define KoAPP_ChDimValue                          (knx.getGroupObject(APP_KoChDimValue))
-// Szene
+// Scene control
 #define KoAPP_ChScene                             (knx.getGroupObject(APP_KoChScene))
-// Szenenstatus
+// Scene status
 #define KoAPP_ChSceneState                        (knx.getGroupObject(APP_KoChSceneState))
-// Rot
+// Red
 #define KoAPP_ChRed                               (knx.getGroupObject(APP_KoChRed))
-// Rot Status
+// Red status
 #define KoAPP_ChRedValue                          (knx.getGroupObject(APP_KoChRedValue))
 // Green
 #define KoAPP_ChGreen                             (knx.getGroupObject(APP_KoChGreen))
-// Green Status
+// Green status
 #define KoAPP_ChGreenValue                        (knx.getGroupObject(APP_KoChGreenValue))
-// Blau
+// Blue
 #define KoAPP_ChBlue                              (knx.getGroupObject(APP_KoChBlue))
-// Blau Status
+// Blue status
 #define KoAPP_ChBlueValue                         (knx.getGroupObject(APP_KoChBlueValue))
 // RGB
 #define KoAPP_ChRGB                               (knx.getGroupObject(APP_KoChRGB))
-// RGB Status
+// RGB status
 #define KoAPP_ChRGBValue                          (knx.getGroupObject(APP_KoChRGBValue))
-// Nachtlicht
+// Nightlight
 #define KoAPP_ChNightlightSw                      (knx.getGroupObject(APP_KoChNightlightSw))
-// Nachtlicht Status
+// Nightlight status
 #define KoAPP_ChNightlightState                   (knx.getGroupObject(APP_KoChNightlightState))
 // Preset
 #define KoAPP_ChPreset                            (knx.getGroupObject(APP_KoChPreset))
-// Preset Status
+// Preset status
 #define KoAPP_ChPresetValue                       (knx.getGroupObject(APP_KoChPresetValue))
 // Palette
 #define KoAPP_ChPalette                           (knx.getGroupObject(APP_KoChPalette))
-// Palette Status
+// Palette status
 #define KoAPP_ChPaletteValue                      (knx.getGroupObject(APP_KoChPaletteValue))
 // Effect
 #define KoAPP_ChEffectId                          (knx.getGroupObject(APP_KoChEffectId))
-// Effect Status
+// Effect status
 #define KoAPP_ChEffectIdValue                     (knx.getGroupObject(APP_KoChEffectIdValue))
-// Effect Speed
+// Effect speed
 #define KoAPP_ChEffectSpeed                       (knx.getGroupObject(APP_KoChEffectSpeed))
-// Effect Speed Status
+// Effect speed status
 #define KoAPP_ChEffectSpeedValue                  (knx.getGroupObject(APP_KoChEffectSpeedValue))
-// Effect Intensity
+// Effect intensity
 #define KoAPP_ChEffectIntensity                   (knx.getGroupObject(APP_KoChEffectIntensity))
-// Effect Intensity Status
+// Effect intensity status
 #define KoAPP_ChEffectIntensityValue              (knx.getGroupObject(APP_KoChEffectIntensityValue))
-// Weiss
+// White
 #define KoAPP_ChWhite                             (knx.getGroupObject(APP_KoChWhite))
-// Weiss Status
+// White status
 #define KoAPP_ChWhiteValue                        (knx.getGroupObject(APP_KoChWhiteValue))
-// Farbtemperatur
+// Color temperature
 #define KoAPP_ChCct                               (knx.getGroupObject(APP_KoChCct))
-// Farbtemperatur Status
+// Color temperature status
 #define KoAPP_ChCctValue                          (knx.getGroupObject(APP_KoChCctValue))
-// Warmweiss
+// Warm white
 #define KoAPP_ChWarmWhite                         (knx.getGroupObject(APP_KoChWarmWhite))
-// Warmweiss Status
+// Warm white status
 #define KoAPP_ChWarmWhiteValue                    (knx.getGroupObject(APP_KoChWarmWhiteValue))
-// Kaltweiss
+// Cool white
 #define KoAPP_ChColdWhite                         (knx.getGroupObject(APP_KoChColdWhite))
-// Kaltweiss Status
+// Cool white status
 #define KoAPP_ChColdWhiteValue                    (knx.getGroupObject(APP_KoChColdWhiteValue))
-// Farbton
+// Hue
 #define KoAPP_ChHue                               (knx.getGroupObject(APP_KoChHue))
-// Farbton Status
+// Hue status
 #define KoAPP_ChHueValue                          (knx.getGroupObject(APP_KoChHueValue))
-// Saettigung
+// Saturation
 #define KoAPP_ChSaturation                        (knx.getGroupObject(APP_KoChSaturation))
-// Saettigung Status
+// Saturation status
 #define KoAPP_ChSaturationValue                   (knx.getGroupObject(APP_KoChSaturationValue))
-// HSV Helligkeit
+// HSV value
 #define KoAPP_ChValue                             (knx.getGroupObject(APP_KoChValue))
-// HSV Helligkeit Status
+// HSV value status
 #define KoAPP_ChValueValue                        (knx.getGroupObject(APP_KoChValueValue))
 // RGBW
 #define KoAPP_ChRGBW                              (knx.getGroupObject(APP_KoChRGBW))
-// RGBW Status
+// RGBW status
 #define KoAPP_ChRGBWValue                         (knx.getGroupObject(APP_KoChRGBWValue))
-// Rot relativ
+// Relative adjustment: red
 #define KoAPP_ChRedRel                            (knx.getGroupObject(APP_KoChRedRel))
-// Gruen relativ
+// Relative adjustment: green
 #define KoAPP_ChGreenRel                          (knx.getGroupObject(APP_KoChGreenRel))
-// Blau relativ
+// Relative adjustment: blue
 #define KoAPP_ChBlueRel                           (knx.getGroupObject(APP_KoChBlueRel))
-// Weiss relativ
+// Relative adjustment: white
 #define KoAPP_ChWhiteRel                          (knx.getGroupObject(APP_KoChWhiteRel))
-// Warmweiss relativ
+// Relative adjustment: warm white
 #define KoAPP_ChWarmWhiteRel                      (knx.getGroupObject(APP_KoChWarmWhiteRel))
-// Kaltweiss relativ
+// Relative adjustment: cool white
 #define KoAPP_ChColdWhiteRel                      (knx.getGroupObject(APP_KoChColdWhiteRel))
-// Farbton relativ
+// Relative adjustment: hue
 #define KoAPP_ChHueRel                            (knx.getGroupObject(APP_KoChHueRel))
-// Saettigung relativ
+// Relative adjustment: saturation
 #define KoAPP_ChSaturationRel                     (knx.getGroupObject(APP_KoChSaturationRel))
-// HSV Helligkeit relativ
+// Relative adjustment: HSV value
 #define KoAPP_ChValueRel                          (knx.getGroupObject(APP_KoChValueRel))
-// Effect relativ
+// Relative adjustment: effect index
 #define KoAPP_ChEffectRel                         (knx.getGroupObject(APP_KoChEffectRel))
-// Segment schalten
+// Segment switching
 #define KoAPP_ChSegmentSw                         (knx.getGroupObject(APP_KoChSegmentSw))
-// Segment Status
+// Segment on/off status
 #define KoAPP_ChSegmentState                      (knx.getGroupObject(APP_KoChSegmentState))
-// Segment Helligkeit
+// Segment brightness
 #define KoAPP_ChSegmentBrightness                 (knx.getGroupObject(APP_KoChSegmentBrightness))
-// Segment Helligkeit Status
+// Segment brightness status
 #define KoAPP_ChSegmentBrightnessValue            (knx.getGroupObject(APP_KoChSegmentBrightnessValue))
-// Segment umkehren
+// Reverse segment
 #define KoAPP_ChSegmentReverse                    (knx.getGroupObject(APP_KoChSegmentReverse))
-// Segment Umkehr Status
+// Segment reverse status
 #define KoAPP_ChSegmentReverseState               (knx.getGroupObject(APP_KoChSegmentReverseState))
-// Segment spiegeln
+// Mirror segment
 #define KoAPP_ChSegmentMirror                     (knx.getGroupObject(APP_KoChSegmentMirror))
-// Segment Spiegel Status
+// Segment mirror status
 #define KoAPP_ChSegmentMirrorState                (knx.getGroupObject(APP_KoChSegmentMirrorState))
-// Segment einfrieren
+// Freeze segment
 #define KoAPP_ChSegmentFreeze                     (knx.getGroupObject(APP_KoChSegmentFreeze))
-// Segment Einfrieren Status
+// Segment freeze status
 #define KoAPP_ChSegmentFreezeState                (knx.getGroupObject(APP_KoChSegmentFreezeState))
-// Segment auswaehlen
+// Select segment
 #define KoAPP_ChSegmentSelected                   (knx.getGroupObject(APP_KoChSegmentSelected))
-// Segment Auswahl Status
+// Segment selection status
 #define KoAPP_ChSegmentSelectedState              (knx.getGroupObject(APP_KoChSegmentSelectedState))
-// Uebergangszeit
+// Transition time
 #define KoAPP_ChTransition                        (knx.getGroupObject(APP_KoChTransition))
-// Uebergangszeit Status
+// Transition time status
 #define KoAPP_ChTransitionValue                   (knx.getGroupObject(APP_KoChTransitionValue))
-// UDP Sync senden
+// UDP sync send
 #define KoAPP_ChSyncSend                          (knx.getGroupObject(APP_KoChSyncSend))
-// UDP Sync senden Status
+// UDP sync send status
 #define KoAPP_ChSyncSendState                     (knx.getGroupObject(APP_KoChSyncSendState))
-// UDP Sync empfangen
+// UDP sync receive
 #define KoAPP_ChSyncReceive                       (knx.getGroupObject(APP_KoChSyncReceive))
-// UDP Sync empfangen Status
+// UDP sync receive status
 #define KoAPP_ChSyncReceiveState                  (knx.getGroupObject(APP_KoChSyncReceiveState))
-// UDP Sync Sendegruppen
+// UDP sync send groups
 #define KoAPP_ChSyncSendGroups                    (knx.getGroupObject(APP_KoChSyncSendGroups))
-// UDP Sync Sendegruppen Status
+// UDP sync send groups status
 #define KoAPP_ChSyncSendGroupsValue               (knx.getGroupObject(APP_KoChSyncSendGroupsValue))
-// UDP Sync Empfangsgruppen
+// UDP sync receive groups
 #define KoAPP_ChSyncReceiveGroups                 (knx.getGroupObject(APP_KoChSyncReceiveGroups))
-// UDP Sync Empfangsgruppen Status
+// UDP sync receive groups status
 #define KoAPP_ChSyncReceiveGroupsValue            (knx.getGroupObject(APP_KoChSyncReceiveGroupsValue))
-// Live Override
+// Live override
 #define KoAPP_ChLiveOverride                      (knx.getGroupObject(APP_KoChLiveOverride))
-// Live Override Status
+// Live override status
 #define KoAPP_ChLiveOverrideValue                 (knx.getGroupObject(APP_KoChLiveOverrideValue))
-// Hauptsegment
+// Main segment ID
 #define KoAPP_ChMainSegment                       (knx.getGroupObject(APP_KoChMainSegment))
-// Hauptsegment Status
+// Main segment ID status
 #define KoAPP_ChMainSegmentValue                  (knx.getGroupObject(APP_KoChMainSegmentValue))
-// Naechster Playlist-Eintrag
+// Next playlist entry
 #define KoAPP_ChNextPlaylist                      (knx.getGroupObject(APP_KoChNextPlaylist))
-// Playlist Status
+// Playlist ID status
 #define KoAPP_ChPlaylistValue                     (knx.getGroupObject(APP_KoChPlaylistValue))
-// Status abfragen
+// Request WLED status
 #define KoAPP_ChStateRequest                      (knx.getGroupObject(APP_KoChStateRequest))
-// WLED neu starten
+// Reboot WLED
 #define KoAPP_ChReboot                            (knx.getGroupObject(APP_KoChReboot))
-// Effektparameter 1
+// Effect parameter 1
 #define KoAPP_ChEffectCustom1                     (knx.getGroupObject(APP_KoChEffectCustom1))
-// Effektparameter 1 Status
+// Effect parameter 1 status
 #define KoAPP_ChEffectCustom1Value                (knx.getGroupObject(APP_KoChEffectCustom1Value))
-// Effektparameter 2
+// Effect parameter 2
 #define KoAPP_ChEffectCustom2                     (knx.getGroupObject(APP_KoChEffectCustom2))
-// Effektparameter 2 Status
+// Effect parameter 2 status
 #define KoAPP_ChEffectCustom2Value                (knx.getGroupObject(APP_KoChEffectCustom2Value))
-// Effektparameter 3
+// Effect parameter 3
 #define KoAPP_ChEffectCustom3                     (knx.getGroupObject(APP_KoChEffectCustom3))
-// Effektparameter 3 Status
+// Effect parameter 3 status
 #define KoAPP_ChEffectCustom3Value                (knx.getGroupObject(APP_KoChEffectCustom3Value))
-// Effektoption 1
+// Effect option 1
 #define KoAPP_ChEffectOption1                     (knx.getGroupObject(APP_KoChEffectOption1))
-// Effektoption 1 Status
+// Effect option 1 status
 #define KoAPP_ChEffectOption1State                (knx.getGroupObject(APP_KoChEffectOption1State))
-// Effektoption 2
+// Effect option 2
 #define KoAPP_ChEffectOption2                     (knx.getGroupObject(APP_KoChEffectOption2))
-// Effektoption 2 Status
+// Effect option 2 status
 #define KoAPP_ChEffectOption2State                (knx.getGroupObject(APP_KoChEffectOption2State))
-// Effektoption 3
+// Effect option 3
 #define KoAPP_ChEffectOption3                     (knx.getGroupObject(APP_KoChEffectOption3))
-// Effektoption 3 Status
+// Effect option 3 status
 #define KoAPP_ChEffectOption3State                (knx.getGroupObject(APP_KoChEffectOption3State))
-// Segment Start
+// Segment start
 #define KoAPP_ChSegmentStart                      (knx.getGroupObject(APP_KoChSegmentStart))
-// Segment Start Status
+// Segment start status
 #define KoAPP_ChSegmentStartValue                 (knx.getGroupObject(APP_KoChSegmentStartValue))
-// Segment Stop
+// Segment stop
 #define KoAPP_ChSegmentStop                       (knx.getGroupObject(APP_KoChSegmentStop))
-// Segment Stop Status
+// Segment stop status
 #define KoAPP_ChSegmentStopValue                  (knx.getGroupObject(APP_KoChSegmentStopValue))
-// Segment Gruppierung
+// Segment grouping
 #define KoAPP_ChSegmentGrouping                   (knx.getGroupObject(APP_KoChSegmentGrouping))
-// Segment Gruppierung Status
+// Segment grouping status
 #define KoAPP_ChSegmentGroupingValue              (knx.getGroupObject(APP_KoChSegmentGroupingValue))
-// Segment Abstand
+// Segment spacing
 #define KoAPP_ChSegmentSpacing                    (knx.getGroupObject(APP_KoChSegmentSpacing))
-// Segment Abstand Status
+// Segment spacing status
 #define KoAPP_ChSegmentSpacingValue               (knx.getGroupObject(APP_KoChSegmentSpacingValue))
-// Segment Offset
+// Segment offset
 #define KoAPP_ChSegmentOffset                     (knx.getGroupObject(APP_KoChSegmentOffset))
-// Segment Offset Status
+// Segment offset status
 #define KoAPP_ChSegmentOffsetValue                (knx.getGroupObject(APP_KoChSegmentOffsetValue))
-// Sekundaerfarbe RGBW
+// Secondary RGBW color
 #define KoAPP_ChSecondaryRGBW                     (knx.getGroupObject(APP_KoChSecondaryRGBW))
-// Sekundaerfarbe RGBW Status
+// Secondary RGBW color status
 #define KoAPP_ChSecondaryRGBWValue                (knx.getGroupObject(APP_KoChSecondaryRGBWValue))
-// Tertiaerfarbe RGBW
+// Tertiary RGBW color
 #define KoAPP_ChTertiaryRGBW                      (knx.getGroupObject(APP_KoChTertiaryRGBW))
-// Tertiaerfarbe RGBW Status
+// Tertiary RGBW color status
 #define KoAPP_ChTertiaryRGBWValue                 (knx.getGroupObject(APP_KoChTertiaryRGBWValue))
-// Playlist speichern
+// Save playlist
 #define KoAPP_ChPlaylistSave                      (knx.getGroupObject(APP_KoChPlaylistSave))
-// Playlist starten
+// Start playlist
 #define KoAPP_ChPlaylistStart                     (knx.getGroupObject(APP_KoChPlaylistStart))
-// Preset-Aktion freigeben
+// Arm preset actions
 #define KoAPP_ChPresetActionArm                   (knx.getGroupObject(APP_KoChPresetActionArm))
-// Preset-Aktion Freigabe Status
+// Preset actions armed status
 #define KoAPP_ChPresetActionArmState              (knx.getGroupObject(APP_KoChPresetActionArmState))
-// Preset speichern
+// Save preset
 #define KoAPP_ChPresetSave                        (knx.getGroupObject(APP_KoChPresetSave))
-// Preset loeschen
+// Delete preset
 #define KoAPP_ChPresetDelete                      (knx.getGroupObject(APP_KoChPresetDelete))
-// Naechstes Preset
+// Next preset
 #define KoAPP_ChPresetNext                        (knx.getGroupObject(APP_KoChPresetNext))
-// Vorheriges Preset
+// Previous preset
 #define KoAPP_ChPresetPrevious                    (knx.getGroupObject(APP_KoChPresetPrevious))
-// Zufaelliges Preset
+// Random preset
 #define KoAPP_ChPresetRandom                      (knx.getGroupObject(APP_KoChPresetRandom))
-// Realtime-Modus
+// Realtime mode
 #define KoAPP_ChLive                              (knx.getGroupObject(APP_KoChLive))
-// Realtime Status
+// Realtime mode status
 #define KoAPP_ChLiveState                         (knx.getGroupObject(APP_KoChLiveState))
-// Realtime Segment Status
+// Realtime segment status
 #define KoAPP_ChLiveSegmentValue                  (knx.getGroupObject(APP_KoChLiveSegmentValue))
-// Realtime Protokoll Status
+// Realtime protocol status
 #define KoAPP_ChLiveModeValue                     (knx.getGroupObject(APP_KoChLiveModeValue))
-// WLAN RSSI Status
+// Wi-Fi RSSI
 #define KoAPP_ChWifiRssiValue                     (knx.getGroupObject(APP_KoChWifiRssiValue))
-// WLAN Signal Status
+// Wi-Fi signal strength
 #define KoAPP_ChWifiSignalValue                   (knx.getGroupObject(APP_KoChWifiSignalValue))
-// Laufzeit Status
+// Uptime
 #define KoAPP_ChUptimeValue                       (knx.getGroupObject(APP_KoChUptimeValue))
-// Freier Speicher Status
+// Free heap memory
 #define KoAPP_ChFreeHeapValue                     (knx.getGroupObject(APP_KoChFreeHeapValue))
-// WLED Fehler Status
+// WLED error code
 #define KoAPP_ChErrorValue                        (knx.getGroupObject(APP_KoChErrorValue))
-// WLED Build-ID Status
+// WLED build ID
 #define KoAPP_ChBuildIdValue                      (knx.getGroupObject(APP_KoChBuildIdValue))
-// Effektanzahl Status
+// Effect count
 #define KoAPP_ChEffectCountValue                  (knx.getGroupObject(APP_KoChEffectCountValue))
-// Palettenanzahl Status
+// Palette count
 #define KoAPP_ChPaletteCountValue                 (knx.getGroupObject(APP_KoChPaletteCountValue))
-// Maximale Segmente Status
+// Maximum segment count
 #define KoAPP_ChMaxSegmentsValue                  (knx.getGroupObject(APP_KoChMaxSegmentsValue))
-// WLED Version Status
+// WLED version
 #define KoAPP_ChVersionValue                      (knx.getGroupObject(APP_KoChVersionValue))
-// LED-Map
+// LED map
 #define KoAPP_ChLedmap                            (knx.getGroupObject(APP_KoChLedmap))
-// LED-Map Status
+// LED map status
 #define KoAPP_ChLedmapValue                       (knx.getGroupObject(APP_KoChLedmapValue))
-// Effekt-Timebase
+// Effect timebase
 #define KoAPP_ChTimebase                          (knx.getGroupObject(APP_KoChTimebase))
-// Nachtlichtdauer
+// Nightlight duration
 #define KoAPP_ChNightlightDuration                (knx.getGroupObject(APP_KoChNightlightDuration))
-// Nachtlichtdauer Status
+// Nightlight duration status
 #define KoAPP_ChNightlightDurationValue           (knx.getGroupObject(APP_KoChNightlightDurationValue))
-// Nachtlichtmodus
+// Nightlight mode
 #define KoAPP_ChNightlightMode                    (knx.getGroupObject(APP_KoChNightlightMode))
-// Nachtlichtmodus Status
+// Nightlight mode status
 #define KoAPP_ChNightlightModeValue               (knx.getGroupObject(APP_KoChNightlightModeValue))
-// Nachtlicht Zielhelligkeit
+// Nightlight target brightness
 #define KoAPP_ChNightlightTarget                  (knx.getGroupObject(APP_KoChNightlightTarget))
-// Nachtlicht Zielhelligkeit Status
+// Nightlight target brightness status
 #define KoAPP_ChNightlightTargetValue             (knx.getGroupObject(APP_KoChNightlightTargetValue))
-// Nachtlicht Restzeit Status
+// Nightlight time remaining
 #define KoAPP_ChNightlightRemainingValue          (knx.getGroupObject(APP_KoChNightlightRemainingValue))
-// Segmentname
+// Segment name
 #define KoAPP_ChSegmentName                       (knx.getGroupObject(APP_KoChSegmentName))
-// Segmentname Status
+// Segment name status
 #define KoAPP_ChSegmentNameValue                  (knx.getGroupObject(APP_KoChSegmentNameValue))
-// Segment vorhanden Status
+// Segment present status
 #define KoAPP_ChSegmentPresentState               (knx.getGroupObject(APP_KoChSegmentPresentState))
-// Segment-Aktion freigeben
+// Arm segment deletion
 #define KoAPP_ChSegmentActionArm                  (knx.getGroupObject(APP_KoChSegmentActionArm))
-// Segment-Aktion Freigabe Status
+// Segment deletion armed status
 #define KoAPP_ChSegmentActionArmState             (knx.getGroupObject(APP_KoChSegmentActionArmState))
-// Segment loeschen
+// Delete segment
 #define KoAPP_ChSegmentDelete                     (knx.getGroupObject(APP_KoChSegmentDelete))
-// Segmentaufbau anwenden
+// Apply segment layout
 #define KoAPP_ChSegmentApply                      (knx.getGroupObject(APP_KoChSegmentApply))
-// Playlist stoppen
+// Stop playlist
 #define KoAPP_ChPlaylistStop                      (knx.getGroupObject(APP_KoChPlaylistStop))
-// Playlist aktiv Status
+// Playlist active status
 #define KoAPP_ChPlaylistActiveState               (knx.getGroupObject(APP_KoChPlaylistActiveState))
-// Preset aktiv Status
+// Preset active status
 #define KoAPP_ChPresetActiveState                 (knx.getGroupObject(APP_KoChPresetActiveState))
-// Sync-Knotenanzahl Status
+// UDP sync node count
 #define KoAPP_ChNodeCountValue                    (knx.getGroupObject(APP_KoChNodeCountValue))
-// Geschaetzter LED-Strom Status
+// Estimated LED current
 #define KoAPP_ChLedCurrentValue                   (knx.getGroupObject(APP_KoChLedCurrentValue))
-// LED-Stromgrenze Status
+// LED current limit
 #define KoAPP_ChLedMaxCurrentValue                (knx.getGroupObject(APP_KoChLedMaxCurrentValue))
-// IP-Adresse Status
+// IPv4 address
 #define KoAPP_ChIpAddressValue                    (knx.getGroupObject(APP_KoChIpAddressValue))
-// WLAN BSSID Status
+// Wi-Fi BSSID
 #define KoAPP_ChWifiBssidValue                    (knx.getGroupObject(APP_KoChWifiBssidValue))
-// WLAN-Kanal Status
+// Wi-Fi channel
 #define KoAPP_ChWifiChannelValue                  (knx.getGroupObject(APP_KoChWifiChannelValue))
-// LED-Anzahl Status
+// LED count
 #define KoAPP_ChLedCountValue                     (knx.getGroupObject(APP_KoChLedCountValue))
-// LED-FPS Status
+// LED frame rate
 #define KoAPP_ChLedFpsValue                       (knx.getGroupObject(APP_KoChLedFpsValue))
-// Matrixbreite Status
+// Matrix width
 #define KoAPP_ChMatrixWidthValue                  (knx.getGroupObject(APP_KoChMatrixWidthValue))
-// Matrixhoehe Status
+// Matrix height
 #define KoAPP_ChMatrixHeightValue                 (knx.getGroupObject(APP_KoChMatrixHeightValue))
-// WLED-Zeit setzen
+// Set WLED time
 #define KoAPP_ChDeviceTime                        (knx.getGroupObject(APP_KoChDeviceTime))
-// Lokales Datum Status
+// Local date
 #define KoAPP_ChLocalDateValue                    (knx.getGroupObject(APP_KoChLocalDateValue))
-// Lokale Zeit Status
+// Local time
 #define KoAPP_ChLocalTimeValue                    (knx.getGroupObject(APP_KoChLocalTimeValue))
-// Segment 1 Schalten
+// Segment 1 on/off
 #define KoAPP_ChManagedSegment1On                 (knx.getGroupObject(APP_KoChManagedSegment1On))
-// Segment 1 Helligkeit
+// Segment 1 brightness
 #define KoAPP_ChManagedSegment1Brightness         (knx.getGroupObject(APP_KoChManagedSegment1Brightness))
-// Segment 1 Farbtemperatur
+// Segment 1 color temperature
 #define KoAPP_ChManagedSegment1Cct                (knx.getGroupObject(APP_KoChManagedSegment1Cct))
 // Segment 1 RGBW
 #define KoAPP_ChManagedSegment1Rgbw               (knx.getGroupObject(APP_KoChManagedSegment1Rgbw))
-// Segment 1 Optionen
+// Segment 1 options
 #define KoAPP_ChManagedSegment1Options            (knx.getGroupObject(APP_KoChManagedSegment1Options))
-// Segment 1 Name
+// Segment 1 name
 #define KoAPP_ChManagedSegment1Name               (knx.getGroupObject(APP_KoChManagedSegment1Name))
-// Segment 2 Schalten
+// Segment 2 on/off
 #define KoAPP_ChManagedSegment2On                 (knx.getGroupObject(APP_KoChManagedSegment2On))
-// Segment 2 Helligkeit
+// Segment 2 brightness
 #define KoAPP_ChManagedSegment2Brightness         (knx.getGroupObject(APP_KoChManagedSegment2Brightness))
-// Segment 2 Farbtemperatur
+// Segment 2 color temperature
 #define KoAPP_ChManagedSegment2Cct                (knx.getGroupObject(APP_KoChManagedSegment2Cct))
 // Segment 2 RGBW
 #define KoAPP_ChManagedSegment2Rgbw               (knx.getGroupObject(APP_KoChManagedSegment2Rgbw))
-// Segment 2 Optionen
+// Segment 2 options
 #define KoAPP_ChManagedSegment2Options            (knx.getGroupObject(APP_KoChManagedSegment2Options))
-// Segment 2 Name
+// Segment 2 name
 #define KoAPP_ChManagedSegment2Name               (knx.getGroupObject(APP_KoChManagedSegment2Name))
-// Segment 3 Schalten
+// Segment 3 on/off
 #define KoAPP_ChManagedSegment3On                 (knx.getGroupObject(APP_KoChManagedSegment3On))
-// Segment 3 Helligkeit
+// Segment 3 brightness
 #define KoAPP_ChManagedSegment3Brightness         (knx.getGroupObject(APP_KoChManagedSegment3Brightness))
-// Segment 3 Farbtemperatur
+// Segment 3 color temperature
 #define KoAPP_ChManagedSegment3Cct                (knx.getGroupObject(APP_KoChManagedSegment3Cct))
 // Segment 3 RGBW
 #define KoAPP_ChManagedSegment3Rgbw               (knx.getGroupObject(APP_KoChManagedSegment3Rgbw))
-// Segment 3 Optionen
+// Segment 3 options
 #define KoAPP_ChManagedSegment3Options            (knx.getGroupObject(APP_KoChManagedSegment3Options))
-// Segment 3 Name
+// Segment 3 name
 #define KoAPP_ChManagedSegment3Name               (knx.getGroupObject(APP_KoChManagedSegment3Name))
-// Matrix Start Y
+// Matrix start Y
 #define KoAPP_ChMatrixStartY                      (knx.getGroupObject(APP_KoChMatrixStartY))
-// Matrix Stop Y
+// Matrix stop Y
 #define KoAPP_ChMatrixStopY                       (knx.getGroupObject(APP_KoChMatrixStopY))
-// Matrix Y umkehren
+// Reverse matrix Y
 #define KoAPP_ChMatrixReverseY                    (knx.getGroupObject(APP_KoChMatrixReverseY))
-// Matrix Y spiegeln
+// Mirror matrix Y
 #define KoAPP_ChMatrixMirrorY                     (knx.getGroupObject(APP_KoChMatrixMirrorY))
-// Matrix transponieren
+// Transpose matrix axes
 #define KoAPP_ChMatrixTranspose                   (knx.getGroupObject(APP_KoChMatrixTranspose))
-// Segment Set
+// Segment set
 #define KoAPP_ChSegmentSet                        (knx.getGroupObject(APP_KoChSegmentSet))
-// Sound-Simulation
+// Sound simulation
 #define KoAPP_ChSoundSimulation                   (knx.getGroupObject(APP_KoChSoundSimulation))
-// 1D-zu-2D Mapping
+// 1D-to-2D mapping
 #define KoAPP_ChMap1D2D                           (knx.getGroupObject(APP_KoChMap1D2D))
-// Dateisystem belegt Status
+// Filesystem space used
 #define KoAPP_ChFsUsedValue                       (knx.getGroupObject(APP_KoChFsUsedValue))
-// Dateisystem gesamt Status
+// Total filesystem space
 #define KoAPP_ChFsTotalValue                      (knx.getGroupObject(APP_KoChFsTotalValue))
-// Preset-Aenderungszeit Status
+// Preset file modification time
 #define KoAPP_ChPresetsModifiedValue              (knx.getGroupObject(APP_KoChPresetsModifiedValue))
-// LED-Map Anzahl Status
+// LED map count
 #define KoAPP_ChLedMapCountValue                  (knx.getGroupObject(APP_KoChLedMapCountValue))
-// Realtime-Quell-IP Status
+// Realtime source IPv4 address
 #define KoAPP_ChRealtimeSourceIpValue             (knx.getGroupObject(APP_KoChRealtimeSourceIpValue))
-// WebSocket Clients Status
+// WebSocket client count
 #define KoAPP_ChWebsocketClientsValue             (knx.getGroupObject(APP_KoChWebsocketClientsValue))
-// WLED Online Status
+// WLED online status
 #define KoAPP_ChWledOnlineState                   (knx.getGroupObject(APP_KoChWledOnlineState))
-// Letzte Antwort Alter Status
+// Time since last WLED response
 #define KoAPP_ChLastResponseAgeValue              (knx.getGroupObject(APP_KoChLastResponseAgeValue))
-// JSON-Fehlerzaehler Status
+// JSON error count
 #define KoAPP_ChJsonErrorCountValue               (knx.getGroupObject(APP_KoChJsonErrorCountValue))
-// Zu grosse Frames Status
+// Oversized frame count
 #define KoAPP_ChOversizedFrameCountValue          (knx.getGroupObject(APP_KoChOversizedFrameCountValue))
-// UART-Ueberlauf Status
+// UART overflow count
 #define KoAPP_ChUartOverflowCountValue            (knx.getGroupObject(APP_KoChUartOverflowCountValue))
-// LED-Stromauslastung Status
+// LED current as a percentage of the limit
 #define KoAPP_ChCurrentPercentValue               (knx.getGroupObject(APP_KoChCurrentPercentValue))
-// LED-Strom Warnung Status
+// LED current warning status
 #define KoAPP_ChCurrentWarningState               (knx.getGroupObject(APP_KoChCurrentWarningState))
-// LED-Stromgrenze ueberschritten Status
+// LED current limit exceeded status
 #define KoAPP_ChCurrentExceededState              (knx.getGroupObject(APP_KoChCurrentExceededState))
-// RGBW vorhanden Status
+// RGBW supported
 #define KoAPP_ChHasRgbwState                      (knx.getGroupObject(APP_KoChHasRgbwState))
-// Weisskanal vorhanden Status
+// White channel supported
 #define KoAPP_ChHasWhiteState                     (knx.getGroupObject(APP_KoChHasWhiteState))
-// CCT vorhanden Status
+// CCT supported
 #define KoAPP_ChHasCctState                       (knx.getGroupObject(APP_KoChHasCctState))
-// Matrix aktiv Status
+// 2D matrix active status
 #define KoAPP_ChIsMatrixState                     (knx.getGroupObject(APP_KoChIsMatrixState))
 
 

@@ -309,10 +309,10 @@ class EtsXmlTests(unittest.TestCase):
             self.assertEqual(objects[name].attrib["DatapointType"], dpt)
 
         template = ET.parse(ROOT / "lib" / "OFM-DigitalLEDController" / "src" / "DigitalLedModule.templ.xml").getroot()
-        visible_help = " ".join(node.attrib.get("Text", "") for node in template.iter())
-        self.assertIn("Statusabfrage", visible_help)
-        self.assertIn("Nachtlicht", visible_help)
-        self.assertIn("Startwerte und Effekte", visible_help)
+        visible_help = {node.attrib["Text"] for node in template.findall(".//knx:ParameterSeparator", NS)}
+        self.assertTrue(any("polls WLED" in text for text in visible_help))
+        self.assertIn("Nightlight", visible_help)
+        self.assertIn("Startup values and effects", visible_help)
         self.assertIn("WLED JSON API", visible_help)
 
         choices = {
