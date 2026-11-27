@@ -1,8 +1,8 @@
 #pragma once
 
-#define MAIN_Version "d018bfa"
+#define MAIN_Version "7c4c9e2"
 #define KNX_Version "2.3.1+7124a64"
-#define MODULE_DigitalLEDController_Version "0.6.1+d018bfa"
+#define MODULE_DigitalLEDController_Version "0.6.1+7c4c9e2"
 #define MODULE_DigitalLEDController_Version_Major 0
 #define MODULE_DigitalLEDController_Version_Minor 6
 #define MODULE_DigitalLEDController_Version_Revision 1
@@ -12,21 +12,6 @@
 #define MODULE_Common_Version_Minor 9
 #define MODULE_Common_Version_Revision 1
 #define MODULE_Common_ETS 25
-#define MODULE_LogicModule_Version "4.4.1+cd1b5cc"
-#define MODULE_LogicModule_Version_Major 4
-#define MODULE_LogicModule_Version_Minor 4
-#define MODULE_LogicModule_Version_Revision 1
-#define MODULE_LogicModule_ETS 68
-#define MODULE_FunctionBlocks_Version "0.10.0+142bd5b"
-#define MODULE_FunctionBlocks_Version_Major 0
-#define MODULE_FunctionBlocks_Version_Minor 10
-#define MODULE_FunctionBlocks_Version_Revision 0
-#define MODULE_FunctionBlocks_ETS 10
-#define MODULE_VirtualButton_Version "0.7.0+f822931"
-#define MODULE_VirtualButton_Version_Major 0
-#define MODULE_VirtualButton_Version_Minor 7
-#define MODULE_VirtualButton_Version_Revision 0
-#define MODULE_VirtualButton_ETS 7
 #define MODULE_HardwareConfig_Version "1.0.0+acaadd7"
 #define MODULE_HardwareConfig_Version_Major 1
 #define MODULE_HardwareConfig_Version_Minor 0

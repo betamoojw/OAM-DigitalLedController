@@ -1,5 +1,6 @@
 import unittest
 import xml.etree.ElementTree as ET
+import zipfile
 from pathlib import Path
 
 
@@ -142,23 +143,73 @@ class EtsXmlTests(unittest.TestCase):
             self.assertIsNotNone(root.find("op:ETS", NS))
             self.assertIsNotNone(root.find("knx:generate", NS))
 
-    def test_development_and_release_products_include_config_transfer(self):
+    def test_development_and_release_products_include_only_core_and_led(self):
         config_root = ET.parse(ROOT / "src" / "DigitalLEDController.conf.xml").getroot()
         config_values = {node.attrib["name"]: node.attrib["value"] for node in config_root.findall("op:config", NS)}
-        self.assertEqual(config_values["%UCT_VerifyVersion%"], "0.5")
+        self.assertFalse(any(
+            name.startswith(("%UCT_", "%FCB_", "%LOG_", "%BTN_"))
+            for name in config_values
+        ))
 
         for filename in ("DigitalLEDController.xml", "DigitalLEDController-Release.xml"):
             root = ET.parse(ROOT / "src" / filename).getroot()
             modules = {node.attrib["prefix"]: node for node in root.findall("op:define", NS)}
-            config_transfer = modules["UCT"]
-            self.assertEqual(config_transfer.attrib["ModuleType"], "99")
-            self.assertEqual(config_transfer.attrib["noConfigTransfer"], "true")
-            self.assertEqual(config_transfer.attrib["share"], "../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml")
+            self.assertEqual(set(modules), {"BASE", "APP"})
+            self.assertEqual(modules["BASE"].attrib["share"], "../lib/OGM-Common/src/Common.share.xml")
+            self.assertEqual(modules["APP"].attrib["share"], "../lib/OFM-DigitalLEDController/src/DigitalLedModule.share.xml")
+            self.assertEqual(modules["APP"].attrib["KoOffset"], "200")
 
-            verify = config_transfer.find("op:verify", NS)
-            self.assertIsNotNone(verify)
-            self.assertEqual(verify.attrib["File"], "../lib/OFM-ConfigTransfer/library.json")
-            self.assertEqual(verify.attrib["ModuleVersion"], "%UCT_VerifyVersion%")
+    def test_dependencies_include_only_required_openknx_core(self):
+        dependencies = (ROOT / "dependencies.txt").read_text(encoding="utf-8")
+        names = {
+            line.split()[2]
+            for line in dependencies.splitlines()
+            if line.strip() and not line.startswith("#")
+        }
+        self.assertEqual(names, {"knx", "OGM-Common", "OGM-HardwareConfig"})
+
+    def test_generated_header_contains_only_core_and_led_objects(self):
+        header = (ROOT / "include" / "knxprod.h").read_text(encoding="utf-8")
+        module_ids = {
+            line.split()[1].removeprefix("ETS_ModuleId_")
+            for line in header.splitlines()
+            if line.startswith("#define ETS_ModuleId_")
+        }
+        self.assertEqual(module_ids, {"NONE", "BASE", "APP"})
+        self.assertIn("#define MAIN_MaxKoNumber 409", header)
+
+    def test_committed_ets_product_contains_only_core_and_preserves_led_objects(self):
+        with zipfile.ZipFile(ROOT / "src" / "DigitalLEDController.knxprod") as product:
+            application_file, = [
+                name for name in product.namelist()
+                if "_A-" in name and name.endswith(".xml")
+            ]
+            root = ET.fromstring(product.read(application_file))
+
+        application = root.find(".//knx:ApplicationProgram", NS)
+        self.assertIsNotNone(application)
+        self.assertEqual(application.attrib["ApplicationVersion"], "7")
+        for node in application.findall(".//knx:Parameter", NS):
+            self.assertTrue(node.attrib["Name"].startswith(("BASE_", "APP_")))
+
+        objects = application.findall(".//knx:ComObject", NS)
+        self.assertTrue(all(
+            node.attrib["Name"].startswith(("BASE_", "APP_")) for node in objects
+        ))
+        led_numbers = [
+            int(node.attrib["Number"])
+            for node in objects
+            if node.attrib["Name"].startswith("APP_")
+        ]
+        self.assertCountEqual(led_numbers, range(201, 410))
+        self.assertEqual(
+            {int(node.attrib["Number"]) for node in objects if node.attrib["Name"].startswith("BASE_")},
+            set(range(1, 8)),
+        )
+
+        self.assertFalse(application.findall(
+            ".//knx:ParameterBlock[@Name='BASE_OpenKNXproducerGeneratedModules']", NS
+        ))
 
     def test_module_xml_exposes_runtime_parameters_and_help(self):
         root = ET.parse(ROOT / "lib" / "OFM-DigitalLEDController" / "src" / "DigitalLedModule.share.xml").getroot()

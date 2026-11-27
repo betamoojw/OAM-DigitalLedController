@@ -12,19 +12,13 @@ class FirmwareStartupTests(unittest.TestCase):
         self.assertIn("const uint8_t firmwareRevision = 1;", source)
         self.assertIn("openknx.init(firmwareRevision);", source)
 
-    def test_modules_have_stable_unique_flash_ids(self):
+    def test_only_digital_led_module_is_registered_with_stable_flash_id(self):
         source = (ROOT / "src" / "main.cpp").read_text(encoding="utf-8")
         modules = re.findall(r"openknx\.addModule\((\d+),\s*(\w+)\);", source)
         self.assertEqual(
             modules,
-            [
-                ("1", "digitalLedModule"),
-                ("2", "openknxFunctionBlocksModule"),
-                ("3", "openknxLogic"),
-                ("4", "openknxVirtualButtonModule"),
-            ],
+            [("1", "digitalLedModule")],
         )
-        self.assertEqual(len({module_id for module_id, _ in modules}), len(modules))
 
     def test_framework_initializes_before_module_registration_and_setup(self):
         source = (ROOT / "src" / "main.cpp").read_text(encoding="utf-8")

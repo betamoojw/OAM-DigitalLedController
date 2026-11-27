@@ -8,3 +8,6 @@ src/*.baggages/
 .tools/
 test-results.txt
 /include/buildtime.h
+/lib/knx/
+/lib/OGM-Common/
+/lib/OGM-HardwareConfig/

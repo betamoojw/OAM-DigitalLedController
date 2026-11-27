@@ -51,11 +51,24 @@ The product definition is maintained by OpenKNXproducer XML, not Kaenx-Creator:
 - `src/DigitalLEDController.xml`: development product entry point
 - `src/DigitalLEDController-Release.xml`: release product entry point
 - `src/DigitalLEDController.conf.xml`: version and module configuration
+- `src/DigitalLEDController.base.xml`: single-module ETS generation template
 - `lib/OFM-DigitalLEDController/src/DigitalLedModule.share.xml`: LED objects and parameters
 - `lib/OFM-DigitalLEDController/src/DigitalLedModule.templ.xml`: channel UI and object references
 
-The product also includes ConfigTransfer, FunctionBlocks, LogicModule and
-VirtualButton as reusable OpenKNX modules.
+`digitalLedModule` is the only registered application module. Both ETS products
+include only the Digital LED definition (`APP`) and the required OpenKNX Common
+definition (`BASE`). The KNX stack, Common lifecycle services and hardware
+configuration remain core dependencies; ConfigTransfer, FunctionBlocks,
+LogicModule and VirtualButton are not included.
+The custom generation template omits Common's ConfigTransfer-dependent module
+selector while preserving the core parameters, objects and device services.
+
+The Digital LED communication objects retain their numbers (201–409), and the
+module retains flash ID 1. Removing the other modules changes the ETS parameter
+layout, so the ETS application version is now 0.7: regenerate the product and
+firmware header together, rebuild the firmware,
+and download the matching application from ETS. Do not use the previous multi-module
+ETS product with this firmware.
 
 Generate the ETS product and firmware header with:
 

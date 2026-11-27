@@ -2,7 +2,3 @@
 7124a64 v1 knx https://github.com/OpenKNX/knx.git
 66bc4af v1 OGM-Common https://github.com/OpenKNX/OGM-Common.git
 acaadd7 v1 OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
-eca6977 v1 OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer.git
-142bd5b v1 OFM-FunctionBlocks https://github.com/OpenKNX/OFM-FunctionBlocks.git
-cd1b5cc v1 OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
-f822931 v1 OFM-VirtualButton https://github.com/OpenKNX/OFM-VirtualButton.git

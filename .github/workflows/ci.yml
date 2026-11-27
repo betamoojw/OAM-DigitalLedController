@@ -23,10 +23,6 @@ jobs:
             ../knx
             ../OGM-Common
             ../OGM-HardwareConfig
-            ../OFM-ConfigTransfer
-            ../OFM-FunctionBlocks
-            ../OFM-LogicModule
-            ../OFM-VirtualButton
           key: ${{ runner.os }}-ofm-led-${{ hashFiles('dependencies.txt', 'platformio.ini', 'platformio.custom.ini', 'scripts/Install-OpenKNXProducer.ps1') }}
           restore-keys: |
             ${{ runner.os }}-ofm-led-
@@ -72,8 +68,8 @@ jobs:
       - name: Preserve development generated files
         shell: pwsh
         run: |
-          if (-not (Test-Path src\DigitalLEDController.baggages\AF\01\01\Help_de.zip)) { throw "Development Help_de.zip baggage is missing" }
-          if (-not (Test-Path src\DigitalLEDController.baggages\AF\01\01\Icons.zip)) { throw "Development Icons.zip baggage is missing" }
+          if (-not (Test-Path src\DigitalLEDController.baggages\AF\01\07\Help_de.zip)) { throw "Development Help_de.zip baggage is missing" }
+          if (-not (Test-Path src\DigitalLEDController.baggages\AF\01\07\Icons.zip)) { throw "Development Icons.zip baggage is missing" }
           New-Item -ItemType Directory -Path "$env:RUNNER_TEMP\ofm-dev" -Force | Out-Null
           Copy-Item include\knxprod.h "$env:RUNNER_TEMP\ofm-dev\knxprod.h"
           Copy-Item outputs\DigitalLEDController.knxprod "$env:RUNNER_TEMP\ofm-dev\DigitalLEDController.knxprod"
@@ -103,8 +99,8 @@ jobs:
       - name: Collect release artifacts
         shell: pwsh
         run: |
-          if (-not (Test-Path src\DigitalLEDController-Release.baggages\A6\01\01\Help_de.zip)) { throw "Release Help_de.zip baggage is missing" }
-          if (-not (Test-Path src\DigitalLEDController-Release.baggages\A6\01\01\Icons.zip)) { throw "Release Icons.zip baggage is missing" }
+          if (-not (Test-Path src\DigitalLEDController-Release.baggages\AF\01\07\Help_de.zip)) { throw "Release Help_de.zip baggage is missing" }
+          if (-not (Test-Path src\DigitalLEDController-Release.baggages\AF\01\07\Icons.zip)) { throw "Release Icons.zip baggage is missing" }
           New-Item -ItemType Directory -Path "$env:RUNNER_TEMP\ofm-release" -Force | Out-Null
           Copy-Item include\knxprod.h "$env:RUNNER_TEMP\ofm-release\knxprod.h"
           Copy-Item outputs\DigitalLEDController-Release.knxprod "$env:RUNNER_TEMP\ofm-release\DigitalLEDController-Release.knxprod"
